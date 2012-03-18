@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'AppHarborAPIClient' target in the 'AppHarborAPIClient' project
+//
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+	#import "AHUSerDefaultsConstants.h"
+#endif

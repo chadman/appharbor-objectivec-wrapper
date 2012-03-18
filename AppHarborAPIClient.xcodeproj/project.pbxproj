@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD9C17DC1513C977004A8308 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17DB1513C977004A8308 /* Foundation.framework */; };
+		FD9C17E21513C977004A8308 /* AppHarborAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C17E11513C977004A8308 /* AppHarborAPIClient.m */; };
+		FD9C17EA1513C977004A8308 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17E91513C977004A8308 /* SenTestingKit.framework */; };
+		FD9C17EC1513C977004A8308 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17EB1513C977004A8308 /* UIKit.framework */; };
+		FD9C17ED1513C977004A8308 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17DB1513C977004A8308 /* Foundation.framework */; };
+		FD9C17F01513C977004A8308 /* libAppHarborAPIClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17D81513C977004A8308 /* libAppHarborAPIClient.a */; };
+		FD9C17F61513C977004A8308 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD9C17F41513C977004A8308 /* InfoPlist.strings */; };
+		FD9C17F91513C977004A8308 /* AppHarborAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C17F81513C977004A8308 /* AppHarborAPIClientTests.m */; };
+		FD9C181C1513D37E004A8308 /* DateUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C18061513D37E004A8308 /* DateUtility.h */; };
+		FD9C181D1513D37E004A8308 /* DateUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C18071513D37E004A8308 /* DateUtility.m */; };
+		FD9C181E1513D37E004A8308 /* NRXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C18081513D37E004A8308 /* NRXMLParser.h */; };
+		FD9C181F1513D37E004A8308 /* NRXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C18091513D37E004A8308 /* NRXMLParser.m */; };
+		FD9C18201513D37E004A8308 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C180B1513D37E004A8308 /* JSON.h */; };
+		FD9C18211513D37E004A8308 /* NRJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C180C1513D37E004A8308 /* NRJSON.h */; };
+		FD9C18221513D37E004A8308 /* NRJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C180D1513D37E004A8308 /* NRJSON.m */; };
+		FD9C18231513D37E004A8308 /* NRJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C180E1513D37E004A8308 /* NRJsonBase.h */; };
+		FD9C18241513D37E004A8308 /* NRJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C180F1513D37E004A8308 /* NRJsonBase.m */; };
+		FD9C18251513D37E004A8308 /* NRJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C18101513D37E004A8308 /* NRJsonParser.h */; };
+		FD9C18261513D37E004A8308 /* NRJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C18111513D37E004A8308 /* NRJsonParser.m */; };
+		FD9C18271513D37E004A8308 /* NRJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C18121513D37E004A8308 /* NRJsonWriter.h */; };
+		FD9C18281513D37E004A8308 /* NRJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C18131513D37E004A8308 /* NRJsonWriter.m */; };
+		FD9C18291513D37E004A8308 /* NSObject+NRJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C18141513D37E004A8308 /* NSObject+NRJSON.h */; };
+		FD9C182A1513D37E004A8308 /* NSObject+NRJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C18151513D37E004A8308 /* NSObject+NRJSON.m */; };
+		FD9C182B1513D37E004A8308 /* NSString+NRJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C18161513D37E004A8308 /* NSString+NRJSON.h */; };
+		FD9C182C1513D37E004A8308 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C18171513D37E004A8308 /* NSString+SBJSON.m */; };
+		FD9C182D1513D37E004A8308 /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C18181513D37E004A8308 /* Utility.h */; };
+		FD9C182E1513D37E004A8308 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C18191513D37E004A8308 /* Utility.m */; };
+		FD9C182F1513D37E004A8308 /* WebRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C181A1513D37E004A8308 /* WebRequest.h */; };
+		FD9C18301513D37E004A8308 /* WebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C181B1513D37E004A8308 /* WebRequest.m */; };
+		FD9C18341513D435004A8308 /* AHUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C18321513D435004A8308 /* AHUserDefaults.h */; };
+		FD9C18351513D435004A8308 /* AHUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C18331513D435004A8308 /* AHUserDefaults.m */; };
+		FD9C18391513D4C5004A8308 /* AHApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C18371513D4C5004A8308 /* AHApplication.h */; };
+		FD9C183A1513D4C5004A8308 /* AHApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C18381513D4C5004A8308 /* AHApplication.m */; };
+		FD9C183E1513D989004A8308 /* AHUSerDefaultsConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9C183C1513D989004A8308 /* AHUSerDefaultsConstants.h */; };
+		FD9C183F1513D989004A8308 /* AHUSerDefaultsConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C183D1513D989004A8308 /* AHUSerDefaultsConstants.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD9C17EE1513C977004A8308 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD9C17CF1513C976004A8308 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD9C17D71513C977004A8308;
+			remoteInfo = AppHarborAPIClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD9C17D81513C977004A8308 /* libAppHarborAPIClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAppHarborAPIClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD9C17DB1513C977004A8308 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FD9C17DF1513C977004A8308 /* AppHarborAPIClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppHarborAPIClient-Prefix.pch"; sourceTree = "<group>"; };
+		FD9C17E01513C977004A8308 /* AppHarborAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppHarborAPIClient.h; sourceTree = "<group>"; };
+		FD9C17E11513C977004A8308 /* AppHarborAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppHarborAPIClient.m; sourceTree = "<group>"; };
+		FD9C17E81513C977004A8308 /* AppHarborAPIClientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppHarborAPIClientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD9C17E91513C977004A8308 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FD9C17EB1513C977004A8308 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		FD9C17F31513C977004A8308 /* AppHarborAPIClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppHarborAPIClientTests-Info.plist"; sourceTree = "<group>"; };
+		FD9C17F51513C977004A8308 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FD9C17F71513C977004A8308 /* AppHarborAPIClientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppHarborAPIClientTests.h; sourceTree = "<group>"; };
+		FD9C17F81513C977004A8308 /* AppHarborAPIClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppHarborAPIClientTests.m; sourceTree = "<group>"; };
+		FD9C18061513D37E004A8308 /* DateUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtility.h; sourceTree = "<group>"; };
+		FD9C18071513D37E004A8308 /* DateUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtility.m; sourceTree = "<group>"; };
+		FD9C18081513D37E004A8308 /* NRXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRXMLParser.h; sourceTree = "<group>"; };
+		FD9C18091513D37E004A8308 /* NRXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRXMLParser.m; sourceTree = "<group>"; };
+		FD9C180B1513D37E004A8308 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		FD9C180C1513D37E004A8308 /* NRJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRJSON.h; sourceTree = "<group>"; };
+		FD9C180D1513D37E004A8308 /* NRJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRJSON.m; sourceTree = "<group>"; };
+		FD9C180E1513D37E004A8308 /* NRJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRJsonBase.h; sourceTree = "<group>"; };
+		FD9C180F1513D37E004A8308 /* NRJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRJsonBase.m; sourceTree = "<group>"; };
+		FD9C18101513D37E004A8308 /* NRJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRJsonParser.h; sourceTree = "<group>"; };
+		FD9C18111513D37E004A8308 /* NRJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRJsonParser.m; sourceTree = "<group>"; };
+		FD9C18121513D37E004A8308 /* NRJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRJsonWriter.h; sourceTree = "<group>"; };
+		FD9C18131513D37E004A8308 /* NRJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRJsonWriter.m; sourceTree = "<group>"; };
+		FD9C18141513D37E004A8308 /* NSObject+NRJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NRJSON.h"; sourceTree = "<group>"; };
+		FD9C18151513D37E004A8308 /* NSObject+NRJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NRJSON.m"; sourceTree = "<group>"; };
+		FD9C18161513D37E004A8308 /* NSString+NRJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NRJSON.h"; sourceTree = "<group>"; };
+		FD9C18171513D37E004A8308 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		FD9C18181513D37E004A8308 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		FD9C18191513D37E004A8308 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		FD9C181A1513D37E004A8308 /* WebRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRequest.h; sourceTree = "<group>"; };
+		FD9C181B1513D37E004A8308 /* WebRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRequest.m; sourceTree = "<group>"; };
+		FD9C18321513D435004A8308 /* AHUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHUserDefaults.h; sourceTree = "<group>"; };
+		FD9C18331513D435004A8308 /* AHUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHUserDefaults.m; sourceTree = "<group>"; };
+		FD9C18371513D4C5004A8308 /* AHApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHApplication.h; path = Model/AHApplication.h; sourceTree = "<group>"; };
+		FD9C18381513D4C5004A8308 /* AHApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHApplication.m; path = Model/AHApplication.m; sourceTree = "<group>"; };
+		FD9C183C1513D989004A8308 /* AHUSerDefaultsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHUSerDefaultsConstants.h; path = Constants/AHUSerDefaultsConstants.h; sourceTree = "<group>"; };
+		FD9C183D1513D989004A8308 /* AHUSerDefaultsConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHUSerDefaultsConstants.m; path = Constants/AHUSerDefaultsConstants.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD9C17D51513C977004A8308 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9C17DC1513C977004A8308 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD9C17E41513C977004A8308 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9C17EA1513C977004A8308 /* SenTestingKit.framework in Frameworks */,
+				FD9C17EC1513C977004A8308 /* UIKit.framework in Frameworks */,
+				FD9C17ED1513C977004A8308 /* Foundation.framework in Frameworks */,
+				FD9C17F01513C977004A8308 /* libAppHarborAPIClient.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD9C17CD1513C976004A8308 = {
+			isa = PBXGroup;
+			children = (
+				FD9C17DD1513C977004A8308 /* AppHarborAPIClient */,
+				FD9C17F11513C977004A8308 /* AppHarborAPIClientTests */,
+				FD9C17DA1513C977004A8308 /* Frameworks */,
+				FD9C17D91513C977004A8308 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD9C17D91513C977004A8308 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C17D81513C977004A8308 /* libAppHarborAPIClient.a */,
+				FD9C17E81513C977004A8308 /* AppHarborAPIClientTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD9C17DA1513C977004A8308 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C17DB1513C977004A8308 /* Foundation.framework */,
+				FD9C17E91513C977004A8308 /* SenTestingKit.framework */,
+				FD9C17EB1513C977004A8308 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD9C17DD1513C977004A8308 /* AppHarborAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C183B1513D8AF004A8308 /* Constants */,
+				FD9C18361513D43D004A8308 /* Model */,
+				FD9C18051513D37E004A8308 /* Shared */,
+				FD9C17E01513C977004A8308 /* AppHarborAPIClient.h */,
+				FD9C17E11513C977004A8308 /* AppHarborAPIClient.m */,
+				FD9C17DE1513C977004A8308 /* Supporting Files */,
+				FD9C18321513D435004A8308 /* AHUserDefaults.h */,
+				FD9C18331513D435004A8308 /* AHUserDefaults.m */,
+			);
+			path = AppHarborAPIClient;
+			sourceTree = "<group>";
+		};
+		FD9C17DE1513C977004A8308 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C17DF1513C977004A8308 /* AppHarborAPIClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD9C17F11513C977004A8308 /* AppHarborAPIClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C17F71513C977004A8308 /* AppHarborAPIClientTests.h */,
+				FD9C17F81513C977004A8308 /* AppHarborAPIClientTests.m */,
+				FD9C17F21513C977004A8308 /* Supporting Files */,
+			);
+			path = AppHarborAPIClientTests;
+			sourceTree = "<group>";
+		};
+		FD9C17F21513C977004A8308 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C17F31513C977004A8308 /* AppHarborAPIClientTests-Info.plist */,
+				FD9C17F41513C977004A8308 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD9C18051513D37E004A8308 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C18061513D37E004A8308 /* DateUtility.h */,
+				FD9C18071513D37E004A8308 /* DateUtility.m */,
+				FD9C18081513D37E004A8308 /* NRXMLParser.h */,
+				FD9C18091513D37E004A8308 /* NRXMLParser.m */,
+				FD9C180A1513D37E004A8308 /* SBJSON */,
+				FD9C18181513D37E004A8308 /* Utility.h */,
+				FD9C18191513D37E004A8308 /* Utility.m */,
+				FD9C181A1513D37E004A8308 /* WebRequest.h */,
+				FD9C181B1513D37E004A8308 /* WebRequest.m */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FD9C180A1513D37E004A8308 /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C180B1513D37E004A8308 /* JSON.h */,
+				FD9C180C1513D37E004A8308 /* NRJSON.h */,
+				FD9C180D1513D37E004A8308 /* NRJSON.m */,
+				FD9C180E1513D37E004A8308 /* NRJsonBase.h */,
+				FD9C180F1513D37E004A8308 /* NRJsonBase.m */,
+				FD9C18101513D37E004A8308 /* NRJsonParser.h */,
+				FD9C18111513D37E004A8308 /* NRJsonParser.m */,
+				FD9C18121513D37E004A8308 /* NRJsonWriter.h */,
+				FD9C18131513D37E004A8308 /* NRJsonWriter.m */,
+				FD9C18141513D37E004A8308 /* NSObject+NRJSON.h */,
+				FD9C18151513D37E004A8308 /* NSObject+NRJSON.m */,
+				FD9C18161513D37E004A8308 /* NSString+NRJSON.h */,
+				FD9C18171513D37E004A8308 /* NSString+SBJSON.m */,
+			);
+			path = SBJSON;
+			sourceTree = "<group>";
+		};
+		FD9C18361513D43D004A8308 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C18371513D4C5004A8308 /* AHApplication.h */,
+				FD9C18381513D4C5004A8308 /* AHApplication.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FD9C183B1513D8AF004A8308 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C183C1513D989004A8308 /* AHUSerDefaultsConstants.h */,
+				FD9C183D1513D989004A8308 /* AHUSerDefaultsConstants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FD9C17D61513C977004A8308 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9C181C1513D37E004A8308 /* DateUtility.h in Headers */,
+				FD9C181E1513D37E004A8308 /* NRXMLParser.h in Headers */,
+				FD9C18201513D37E004A8308 /* JSON.h in Headers */,
+				FD9C18211513D37E004A8308 /* NRJSON.h in Headers */,
+				FD9C18231513D37E004A8308 /* NRJsonBase.h in Headers */,
+				FD9C18251513D37E004A8308 /* NRJsonParser.h in Headers */,
+				FD9C18271513D37E004A8308 /* NRJsonWriter.h in Headers */,
+				FD9C18291513D37E004A8308 /* NSObject+NRJSON.h in Headers */,
+				FD9C182B1513D37E004A8308 /* NSString+NRJSON.h in Headers */,
+				FD9C182D1513D37E004A8308 /* Utility.h in Headers */,
+				FD9C182F1513D37E004A8308 /* WebRequest.h in Headers */,
+				FD9C18341513D435004A8308 /* AHUserDefaults.h in Headers */,
+				FD9C18391513D4C5004A8308 /* AHApplication.h in Headers */,
+				FD9C183E1513D989004A8308 /* AHUSerDefaultsConstants.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FD9C17D71513C977004A8308 /* AppHarborAPIClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD9C17FC1513C977004A8308 /* Build configuration list for PBXNativeTarget "AppHarborAPIClient" */;
+			buildPhases = (
+				FD9C17D41513C977004A8308 /* Sources */,
+				FD9C17D51513C977004A8308 /* Frameworks */,
+				FD9C17D61513C977004A8308 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppHarborAPIClient;
+			productName = AppHarborAPIClient;
+			productReference = FD9C17D81513C977004A8308 /* libAppHarborAPIClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FD9C17E71513C977004A8308 /* AppHarborAPIClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD9C17FF1513C977004A8308 /* Build configuration list for PBXNativeTarget "AppHarborAPIClientTests" */;
+			buildPhases = (
+				FD9C17E31513C977004A8308 /* Sources */,
+				FD9C17E41513C977004A8308 /* Frameworks */,
+				FD9C17E51513C977004A8308 /* Resources */,
+				FD9C17E61513C977004A8308 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD9C17EF1513C977004A8308 /* PBXTargetDependency */,
+			);
+			name = AppHarborAPIClientTests;
+			productName = AppHarborAPIClientTests;
+			productReference = FD9C17E81513C977004A8308 /* AppHarborAPIClientTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD9C17CF1513C976004A8308 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = FD9C17D21513C976004A8308 /* Build configuration list for PBXProject "AppHarborAPIClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FD9C17CD1513C976004A8308;
+			productRefGroup = FD9C17D91513C977004A8308 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD9C17D71513C977004A8308 /* AppHarborAPIClient */,
+				FD9C17E71513C977004A8308 /* AppHarborAPIClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD9C17E51513C977004A8308 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9C17F61513C977004A8308 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FD9C17E61513C977004A8308 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD9C17D41513C977004A8308 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9C17E21513C977004A8308 /* AppHarborAPIClient.m in Sources */,
+				FD9C181D1513D37E004A8308 /* DateUtility.m in Sources */,
+				FD9C181F1513D37E004A8308 /* NRXMLParser.m in Sources */,
+				FD9C18221513D37E004A8308 /* NRJSON.m in Sources */,
+				FD9C18241513D37E004A8308 /* NRJsonBase.m in Sources */,
+				FD9C18261513D37E004A8308 /* NRJsonParser.m in Sources */,
+				FD9C18281513D37E004A8308 /* NRJsonWriter.m in Sources */,
+				FD9C182A1513D37E004A8308 /* NSObject+NRJSON.m in Sources */,
+				FD9C182C1513D37E004A8308 /* NSString+SBJSON.m in Sources */,
+				FD9C182E1513D37E004A8308 /* Utility.m in Sources */,
+				FD9C18301513D37E004A8308 /* WebRequest.m in Sources */,
+				FD9C18351513D435004A8308 /* AHUserDefaults.m in Sources */,
+				FD9C183A1513D4C5004A8308 /* AHApplication.m in Sources */,
+				FD9C183F1513D989004A8308 /* AHUSerDefaultsConstants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD9C17E31513C977004A8308 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9C17F91513C977004A8308 /* AppHarborAPIClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD9C17EF1513C977004A8308 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD9C17D71513C977004A8308 /* AppHarborAPIClient */;
+			targetProxy = FD9C17EE1513C977004A8308 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD9C17F41513C977004A8308 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD9C17F51513C977004A8308 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD9C17FA1513C977004A8308 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FD9C17FB1513C977004A8308 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD9C17FD1513C977004A8308 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/AppHarborAPIClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppHarborAPIClient/AppHarborAPIClient-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FD9C17FE1513C977004A8308 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/AppHarborAPIClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppHarborAPIClient/AppHarborAPIClient-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FD9C18001513C977004A8308 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppHarborAPIClient/AppHarborAPIClient-Prefix.pch";
+				INFOPLIST_FILE = "AppHarborAPIClientTests/AppHarborAPIClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FD9C18011513C977004A8308 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppHarborAPIClient/AppHarborAPIClient-Prefix.pch";
+				INFOPLIST_FILE = "AppHarborAPIClientTests/AppHarborAPIClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD9C17D21513C976004A8308 /* Build configuration list for PBXProject "AppHarborAPIClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD9C17FA1513C977004A8308 /* Debug */,
+				FD9C17FB1513C977004A8308 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD9C17FC1513C977004A8308 /* Build configuration list for PBXNativeTarget "AppHarborAPIClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD9C17FD1513C977004A8308 /* Debug */,
+				FD9C17FE1513C977004A8308 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD9C17FF1513C977004A8308 /* Build configuration list for PBXNativeTarget "AppHarborAPIClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD9C18001513C977004A8308 /* Debug */,
+				FD9C18011513C977004A8308 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD9C17CF1513C976004A8308 /* Project object */;
+}
