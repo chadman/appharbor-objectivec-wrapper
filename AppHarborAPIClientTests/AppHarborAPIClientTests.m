@@ -7,26 +7,23 @@
 //
 
 #import "AppHarborAPIClientTests.h"
+#import "AHAuthorize.h"
 
 @implementation AppHarborAPIClientTests
 
-- (void)setUp
-{
-    [super setUp];
-    
-    // Set-up code here.
+
+- (void) testUserIsNotValid {
+	
+	[AHAuthorize killSettings];
+	
+	STAssertFalse([AHAuthorize isUserValid], @"user is valid, you fail.");
+	
 }
 
-- (void)tearDown
-{
-    // Tear-down code here.
-    
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in AppHarborAPIClientTests");
+- (void) testUserIsValid {
+	
+	[AHAuthorize setAccessToken:@"testkey"];
+	STAssertTrue([AHAuthorize isUserValid], @"user is not valid, you fail");
 }
 
 @end

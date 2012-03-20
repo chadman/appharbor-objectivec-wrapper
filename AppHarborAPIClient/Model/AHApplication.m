@@ -9,5 +9,8 @@
 #import "AHApplication.h"
 
 @implementation AHApplication
+@synthesize name;
+@synthesize slug;
+@synthesize url;
 
 @end

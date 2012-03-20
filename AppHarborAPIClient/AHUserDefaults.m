@@ -50,13 +50,13 @@ static AHUserDefaults *_sharedDefaults = nil;
 
 - (NSString *) accessToken {
 	
-return [[NSUserDefaults standardUserDefaults] objectForKey:kAppHarborRefreshToken];
+return [[NSUserDefaults standardUserDefaults] objectForKey:kAppHarborAccessToken];
 	
 }
 
 - (void) setAccessToken: (NSString *)token {
 	
-	[[NSUserDefaults standardUserDefaults] setObject:token forKey:kAppHarborClientID];
+	[[NSUserDefaults standardUserDefaults] setObject:token forKey:kAppHarborAccessToken];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -64,6 +64,8 @@ return [[NSUserDefaults standardUserDefaults] objectForKey:kAppHarborRefreshToke
 	
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kAppHarborClientID];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kAppHarborClientSecret];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kAppHarborAccessToken];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kAppHarborRefreshToken];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 

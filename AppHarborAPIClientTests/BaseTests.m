@@ -7,13 +7,27 @@
 //
 
 #import "BaseTests.h"
+#import "AHAuthorize.h"
+#import "AHTestsConstants.h"
 
 @implementation BaseTests
 
-// All code under test must be linked into the Unit Test bundle
-- (void)testMath
+- (void)setUp
 {
-    STAssertTrue((1 + 1) == 2, @"Compiler isn't feeling well today :-(");
+    [super setUp];
+	
+	[AHAuthorize setClientID:kAppHarborClientID withSecrect:kAppHarborClientSecret];
+    
+    // Set-up code here.
 }
+
+- (void)tearDown
+{
+    // Tear-down code here.
+    
+    [super tearDown];
+	[AHAuthorize killSettings];
+}
+
 
 @end

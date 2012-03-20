@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AHApplication : NSObject
+@interface AHApplication : NSObject <NSCoding>
+
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *slug;
+@property (strong, nonatomic) NSString *url;
 
 @end

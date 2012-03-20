@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "BaseTests.h"
 
-@interface AppHarborAPIClientTests : SenTestCase
+@interface AppHarborAPIClientTests : BaseTests
+
+- (void) testUserIsNotValid;
 
 @end

@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C291CB815180B74006BD3E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C291CB715180B74006BD3E5 /* UIKit.framework */; };
+		9C291CBE15181241006BD3E5 /* AHTestsConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C291CBC15181241006BD3E5 /* AHTestsConstants.h */; };
+		9C291CC2151812A3006BD3E5 /* BaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C291CC1151812A3006BD3E5 /* BaseTests.m */; };
+		9C291CC3151812C6006BD3E5 /* AHTestsConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C291CBD15181241006BD3E5 /* AHTestsConstants.m */; };
+		9C291CC415181443006BD3E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C291CB715180B74006BD3E5 /* UIKit.framework */; };
 		FD9C17DC1513C977004A8308 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17DB1513C977004A8308 /* Foundation.framework */; };
-		FD9C17E21513C977004A8308 /* AppHarborAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C17E11513C977004A8308 /* AppHarborAPIClient.m */; };
+		FD9C17E21513C977004A8308 /* AHAuthorize.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C17E11513C977004A8308 /* AHAuthorize.m */; };
 		FD9C17EA1513C977004A8308 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17E91513C977004A8308 /* SenTestingKit.framework */; };
-		FD9C17EC1513C977004A8308 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17EB1513C977004A8308 /* UIKit.framework */; };
 		FD9C17ED1513C977004A8308 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17DB1513C977004A8308 /* Foundation.framework */; };
 		FD9C17F01513C977004A8308 /* libAppHarborAPIClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17D81513C977004A8308 /* libAppHarborAPIClient.a */; };
 		FD9C17F61513C977004A8308 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD9C17F41513C977004A8308 /* InfoPlist.strings */; };
@@ -55,14 +59,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C291CB715180B74006BD3E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9C291CBC15181241006BD3E5 /* AHTestsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTestsConstants.h; path = Constants/AHTestsConstants.h; sourceTree = "<group>"; };
+		9C291CBD15181241006BD3E5 /* AHTestsConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTestsConstants.m; path = Constants/AHTestsConstants.m; sourceTree = "<group>"; };
+		9C291CC0151812A3006BD3E5 /* BaseTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTests.h; sourceTree = "<group>"; };
+		9C291CC1151812A3006BD3E5 /* BaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTests.m; sourceTree = "<group>"; };
 		FD9C17D81513C977004A8308 /* libAppHarborAPIClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAppHarborAPIClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9C17DB1513C977004A8308 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD9C17DF1513C977004A8308 /* AppHarborAPIClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppHarborAPIClient-Prefix.pch"; sourceTree = "<group>"; };
-		FD9C17E01513C977004A8308 /* AppHarborAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppHarborAPIClient.h; sourceTree = "<group>"; };
-		FD9C17E11513C977004A8308 /* AppHarborAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppHarborAPIClient.m; sourceTree = "<group>"; };
+		FD9C17E01513C977004A8308 /* AHAuthorize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AHAuthorize.h; sourceTree = "<group>"; };
+		FD9C17E11513C977004A8308 /* AHAuthorize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AHAuthorize.m; sourceTree = "<group>"; };
 		FD9C17E81513C977004A8308 /* AppHarborAPIClientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppHarborAPIClientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9C17E91513C977004A8308 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		FD9C17EB1513C977004A8308 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		FD9C17F31513C977004A8308 /* AppHarborAPIClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppHarborAPIClientTests-Info.plist"; sourceTree = "<group>"; };
 		FD9C17F51513C977004A8308 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FD9C17F71513C977004A8308 /* AppHarborAPIClientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppHarborAPIClientTests.h; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C291CB815180B74006BD3E5 /* UIKit.framework in Frameworks */,
 				FD9C17DC1513C977004A8308 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,8 +119,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9C17EA1513C977004A8308 /* SenTestingKit.framework in Frameworks */,
-				FD9C17EC1513C977004A8308 /* UIKit.framework in Frameworks */,
 				FD9C17ED1513C977004A8308 /* Foundation.framework in Frameworks */,
+				9C291CC415181443006BD3E5 /* UIKit.framework in Frameworks */,
 				FD9C17F01513C977004A8308 /* libAppHarborAPIClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +128,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C291CBB1518121D006BD3E5 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9C291CBC15181241006BD3E5 /* AHTestsConstants.h */,
+				9C291CBD15181241006BD3E5 /* AHTestsConstants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		FD9C17CD1513C976004A8308 = {
 			isa = PBXGroup;
 			children = (
@@ -141,9 +159,9 @@
 		FD9C17DA1513C977004A8308 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C291CB715180B74006BD3E5 /* UIKit.framework */,
 				FD9C17DB1513C977004A8308 /* Foundation.framework */,
 				FD9C17E91513C977004A8308 /* SenTestingKit.framework */,
-				FD9C17EB1513C977004A8308 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,8 +172,8 @@
 				FD9C183B1513D8AF004A8308 /* Constants */,
 				FD9C18361513D43D004A8308 /* Model */,
 				FD9C18051513D37E004A8308 /* Shared */,
-				FD9C17E01513C977004A8308 /* AppHarborAPIClient.h */,
-				FD9C17E11513C977004A8308 /* AppHarborAPIClient.m */,
+				FD9C17E01513C977004A8308 /* AHAuthorize.h */,
+				FD9C17E11513C977004A8308 /* AHAuthorize.m */,
 				FD9C17DE1513C977004A8308 /* Supporting Files */,
 				FD9C18321513D435004A8308 /* AHUserDefaults.h */,
 				FD9C18331513D435004A8308 /* AHUserDefaults.m */,
@@ -174,9 +192,12 @@
 		FD9C17F11513C977004A8308 /* AppHarborAPIClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C291CBB1518121D006BD3E5 /* Constants */,
 				FD9C17F71513C977004A8308 /* AppHarborAPIClientTests.h */,
 				FD9C17F81513C977004A8308 /* AppHarborAPIClientTests.m */,
 				FD9C17F21513C977004A8308 /* Supporting Files */,
+				9C291CC0151812A3006BD3E5 /* BaseTests.h */,
+				9C291CC1151812A3006BD3E5 /* BaseTests.m */,
 			);
 			path = AppHarborAPIClientTests;
 			sourceTree = "<group>";
@@ -265,6 +286,7 @@
 				FD9C18341513D435004A8308 /* AHUserDefaults.h in Headers */,
 				FD9C18391513D4C5004A8308 /* AHApplication.h in Headers */,
 				FD9C183E1513D989004A8308 /* AHUSerDefaultsConstants.h in Headers */,
+				9C291CBE15181241006BD3E5 /* AHTestsConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +335,7 @@
 		FD9C17CF1513C976004A8308 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = FD9C17D21513C976004A8308 /* Build configuration list for PBXProject "AppHarborAPIClient" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -365,7 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD9C17E21513C977004A8308 /* AppHarborAPIClient.m in Sources */,
+				FD9C17E21513C977004A8308 /* AHAuthorize.m in Sources */,
 				FD9C181D1513D37E004A8308 /* DateUtility.m in Sources */,
 				FD9C181F1513D37E004A8308 /* NRXMLParser.m in Sources */,
 				FD9C18221513D37E004A8308 /* NRJSON.m in Sources */,
@@ -386,7 +408,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C291CC3151812C6006BD3E5 /* AHTestsConstants.m in Sources */,
 				FD9C17F91513C977004A8308 /* AppHarborAPIClientTests.m in Sources */,
+				9C291CC2151812A3006BD3E5 /* BaseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

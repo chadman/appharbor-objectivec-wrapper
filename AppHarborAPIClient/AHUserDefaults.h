@@ -16,4 +16,6 @@
 
 - (void) setAccessToken: (NSString *)token;
 
+- (void) killAll;
+
 @end
