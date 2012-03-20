@@ -12,6 +12,7 @@
 		9C291CC2151812A3006BD3E5 /* BaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C291CC1151812A3006BD3E5 /* BaseTests.m */; };
 		9C291CC3151812C6006BD3E5 /* AHTestsConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C291CBD15181241006BD3E5 /* AHTestsConstants.m */; };
 		9C291CC415181443006BD3E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C291CB715180B74006BD3E5 /* UIKit.framework */; };
+		9C291CC915181B1D006BD3E5 /* AHApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C291CC815181B1D006BD3E5 /* AHApplicationTests.m */; };
 		FD9C17DC1513C977004A8308 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17DB1513C977004A8308 /* Foundation.framework */; };
 		FD9C17E21513C977004A8308 /* AHAuthorize.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C17E11513C977004A8308 /* AHAuthorize.m */; };
 		FD9C17EA1513C977004A8308 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17E91513C977004A8308 /* SenTestingKit.framework */; };
@@ -64,6 +65,8 @@
 		9C291CBD15181241006BD3E5 /* AHTestsConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTestsConstants.m; path = Constants/AHTestsConstants.m; sourceTree = "<group>"; };
 		9C291CC0151812A3006BD3E5 /* BaseTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTests.h; sourceTree = "<group>"; };
 		9C291CC1151812A3006BD3E5 /* BaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTests.m; sourceTree = "<group>"; };
+		9C291CC715181B1D006BD3E5 /* AHApplicationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHApplicationTests.h; path = Models/AHApplicationTests.h; sourceTree = "<group>"; };
+		9C291CC815181B1D006BD3E5 /* AHApplicationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHApplicationTests.m; path = Models/AHApplicationTests.m; sourceTree = "<group>"; };
 		FD9C17D81513C977004A8308 /* libAppHarborAPIClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAppHarborAPIClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9C17DB1513C977004A8308 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD9C17DF1513C977004A8308 /* AppHarborAPIClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppHarborAPIClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -137,6 +140,15 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		9C291CC615181AFF006BD3E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C291CC715181B1D006BD3E5 /* AHApplicationTests.h */,
+				9C291CC815181B1D006BD3E5 /* AHApplicationTests.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		FD9C17CD1513C976004A8308 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +204,7 @@
 		FD9C17F11513C977004A8308 /* AppHarborAPIClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C291CC615181AFF006BD3E5 /* Model */,
 				9C291CBB1518121D006BD3E5 /* Constants */,
 				FD9C17F71513C977004A8308 /* AppHarborAPIClientTests.h */,
 				FD9C17F81513C977004A8308 /* AppHarborAPIClientTests.m */,
@@ -411,6 +424,7 @@
 				9C291CC3151812C6006BD3E5 /* AHTestsConstants.m in Sources */,
 				FD9C17F91513C977004A8308 /* AppHarborAPIClientTests.m in Sources */,
 				9C291CC2151812A3006BD3E5 /* BaseTests.m in Sources */,
+				9C291CC915181B1D006BD3E5 /* AHApplicationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

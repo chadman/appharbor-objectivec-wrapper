@@ -13,7 +13,6 @@
 
 + (BOOL) isUserValid {
 	
-	
 	NSString *token = [[AHUserDefaults sharedDefaults] accessToken];
 	return [token length] > 0;
 }

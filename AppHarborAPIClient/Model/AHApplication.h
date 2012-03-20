@@ -14,4 +14,12 @@
 @property (strong, nonatomic) NSString *slug;
 @property (strong, nonatomic) NSString *url;
 
+
++ (AHApplication *) populateWithDictionary: (NSDictionary *)dict;
+
+
++ (NSArray *)getAll:(NSError **)error;
+
++ (void)getAllUsingCallback:(void (^)(NSArray *))resultsBlock error:(void (^)(NSError *))errorBlock;
+
 @end

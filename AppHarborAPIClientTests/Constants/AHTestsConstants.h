@@ -2,9 +2,9 @@
 
 @interface AHTestsConstants
 
-extern NSString * const kAppHarborClientID;
-extern NSString * const kAppHarborClientSecret;
-extern NSString * const kAppHarborAccessToken;
-extern NSString * const kAppHarborRefreshToken;
+extern NSString * const kAppHarborTestClientID;
+extern NSString * const kAppHarborTestClientSecret;
+extern NSString * const kAppHarborTestAccessToken;
+extern NSString * const kAppHarborTestRefreshToken;
 
 @end

@@ -8,13 +8,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "AppHarborAPIClient/AHAuthorize.m"
-         timestampString = "353899892.633338"
+         filePath = "AppHarborAPIClientTests/Models/AHApplicationTests.m"
+         timestampString = "353901533.381458"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "17"
          endingLineNumber = "17"
-         landmarkName = "+isUserValid"
+         landmarkName = "-testGetAllApplications"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

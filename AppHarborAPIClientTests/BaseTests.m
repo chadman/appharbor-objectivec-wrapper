@@ -16,7 +16,8 @@
 {
     [super setUp];
 	
-	[AHAuthorize setClientID:kAppHarborClientID withSecrect:kAppHarborClientSecret];
+	[AHAuthorize setClientID:kAppHarborTestClientID withSecrect:kAppHarborTestClientSecret];
+	[AHAuthorize setAccessToken:kAppHarborTestAccessToken];
     
     // Set-up code here.
 }
