@@ -1,10 +1,10 @@
 
 #import "WebRequest.h"
 #import "AHUserDefaults.h"
+#import "AHXMLParser.h"
 #import "JSON.h"
-#import "NRXMLParser.h"
 
-@interface WebRequest (PRIVATE)
+@interface AHWebRequest (PRIVATE)
 
 - (NSString *) createContentType:(WebRequestContentType)type;
 - (NSMutableURLRequest *) createURLRequest:(NSURL *)url;
@@ -12,7 +12,7 @@
 @end
 
 
-@implementation WebRequest
+@implementation AHWebRequest
 
 @synthesize requestURL;
 @synthesize responseData;
@@ -41,6 +41,7 @@
     
     // Create the request 
 	NSMutableURLRequest *request = [self createURLRequest:theUrl];
+	[request setValue:[self createContentType:[self webRequestContentType]] forHTTPHeaderField:@"Content-Type"]; 
 	[request setCachePolicy:NSURLRequestReloadIgnoringCacheData];
 	[request setHTTPMethod:@"PUT"];
     [request setHTTPBody:data];
@@ -70,6 +71,7 @@
     
     // Create the request 
 	NSMutableURLRequest *request = [self createURLRequest:theUrl];	
+	[request setValue:[self createContentType:[self webRequestContentType]] forHTTPHeaderField:@"Content-Type"]; 
     [request setHTTPMethod:@"PUT"];
     [request setHTTPBody:data];
 	connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -79,11 +81,12 @@
 - (id) postWebRequest:(NSURL *)theUrl withContentType: (WebRequestContentType)contentType withData:(NSData *)data withError:(NSError **)error {
 
 	NSError *localError = nil;
-	NSURLResponse *localResponse = nil;
+	NSHTTPURLResponse *localResponse = nil;
 	self.webRequestContentType = contentType;
     
     // Create the request 
 	NSMutableURLRequest *request = [self createURLRequest:theUrl];
+	[request setValue:[self createContentType:[self webRequestContentType]] forHTTPHeaderField:@"Content-Type"]; 
 	[request setCachePolicy:NSURLRequestReloadIgnoringCacheData];
 	[request setHTTPMethod:@"POST"];
     [request setHTTPBody:data];
@@ -94,16 +97,22 @@
 	
 	if (localError) {
         NSLog(@"Error occurred :: %@", localError);
+		*error = localError;
     }
     else {
         NSString *responseBody = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-        NSLog(@"Web Request Response :: %@", responseBody);
+        NSInteger statusCode = [localResponse statusCode];
+		NSLog(@"Web Request Response :: %@", responseBody);
 		
-		// Create new SBJSON parser object   
-		return [responseBody JSONValue];
+		if (statusCode == 201) {
+			return nil;
+		}
+		else {
+			*error = [NSError errorWithDomain:@"com.52projects.appharborAPI" code:statusCode userInfo:nil];
+		}
     }
     
-    return localError;
+    return nil;
 }
 
 - (void) postWebRequest: (NSURL *)theUrl withContentType: (WebRequestContentType)contentType withData: (NSData *)data usingCallback:(void (^)(id))returnedResults errorBlock:(void (^)(NSError *))error {
@@ -114,6 +123,7 @@
 	
     // Create the request 
 	NSMutableURLRequest *request = [self createURLRequest:theUrl];
+	[request setValue:[self createContentType:[self webRequestContentType]] forHTTPHeaderField:@"Content-Type"]; 
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:data];
 	connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -122,7 +132,7 @@
 
 - (id) makeWebRequest: (NSURL *)theUrl withContentType: (WebRequestContentType)contentType withError:(NSError **)error {
 
-	NSURLResponse *localResponse = nil;
+	NSHTTPURLResponse *localResponse = nil;
 	self.webRequestContentType = contentType;
     
 	// Create the request 
@@ -138,13 +148,16 @@
     }
     else {
         NSString *responseBody = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+		NSInteger statusCode = [localResponse statusCode];
         NSLog(@"Web Request Response :: %@", responseBody);
 		
 		switch (contentType) {
 			case WebRequestContentTypeXml:
-				return [NRXMLParser dictionaryForXMLString:responseBody error:&*error];
+				return [AHXMLParser dictionaryForXMLString:responseBody error:&*error];
 			case WebRequestContentTypeJson:
-				return [responseBody JSONValue];
+				if (statusCode < 300) {
+					return [(NSString *)responseBody JSONValue];
+				}
 			default:
 				break;
 		}
@@ -152,6 +165,53 @@
 	
 	return nil;
 }
+
+- (BOOL) deleteWebRequest: (NSURL *)theUrl withContentType: (WebRequestContentType)contentType withError:(NSError **)error {
+	
+	NSHTTPURLResponse *localResponse = nil;
+	self.webRequestContentType = contentType;
+    
+	// Create the request 
+	NSMutableURLRequest *request = [self createURLRequest:theUrl];
+	[request setCachePolicy:NSURLRequestReloadIgnoringCacheData];
+	[request setHTTPMethod:@"DELETE"];
+	responseData = (NSMutableData *)[NSURLConnection sendSynchronousRequest:request
+														  returningResponse:&localResponse
+																	  error:&*error];
+	if (*error) {
+        NSLog(@"Error occurred :: %@", *error);
+		return nil;
+    }
+    else {
+        NSString *responseBody = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+		NSInteger statusCode = [localResponse statusCode];
+        NSLog(@"Web Request Response :: %@", responseBody);
+		
+		if (statusCode < 300) {
+			return YES;
+		}
+		else {
+			*error = [NSError errorWithDomain:@"com.52projects.appharborAPI" code:statusCode userInfo:nil];
+			return NO;
+		}
+    }
+
+}
+
+- (void) deleteWebRequest: (NSURL *)theUrl withContentType: (WebRequestContentType)contentType usingCallback:(void (^)(id))returnedResults errorBlock:(void (^)(NSError *))error {
+	
+	self.storedBlock = returnedResults;
+    self.webRequestErrorBlock = error;
+	self.webRequestContentType = contentType;
+	
+    // Create the request 
+	NSMutableURLRequest *request = [self createURLRequest:theUrl];
+    [request setHTTPMethod:@"DELETE"];
+	connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	responseData = [NSMutableData data];
+	
+}
+
 
 
 #pragma mark NSURLConnection methods
@@ -176,25 +236,26 @@
 							  code:statusCode
 						  userInfo:errorInfo];
 		
-		self.storedBlock(statusError);
+		self.webRequestErrorBlock(statusError);
     }
 }
 
 - (void)connection:(NSURLConnection *)aConnection didFailWithError:(NSError *)webError {
-    self.storedBlock(webError);
+    self.webRequestErrorBlock(webError);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)aConnection {
 	
 	NSString *responseBody = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 	NSLog(@"Web Request Response :: %@", responseBody);
+	int statusCode = [((NSHTTPURLResponse *)response) statusCode];
 	NSError *connectionError = nil;
 	NSDictionary *storedBlockResults = nil;
-    
+	
 	switch (self.webRequestContentType) {
 		case WebRequestContentTypeXml:
 			
-			storedBlockResults = [NRXMLParser dictionaryForXMLString:responseBody error:&connectionError];
+			storedBlockResults = [AHXMLParser dictionaryForXMLString:responseBody error:&connectionError];
 			
 			if (connectionError) {
 				self.webRequestErrorBlock(connectionError);
@@ -204,7 +265,17 @@
 			}
 			break;
 		case WebRequestContentTypeJson:
-			self.storedBlock([responseBody JSONValue]);
+			if (statusCode < 300) {
+				if (statusCode != 204) {
+					self.storedBlock([responseBody JSONValue]);
+				}
+				else {
+					self.storedBlock(responseBody);
+				}
+			}
+			else {
+				self.webRequestErrorBlock([NSError errorWithDomain:@"com.52projects.appharborAPI" code:statusCode userInfo:nil]);
+			}
 		default:
 			break;
 	}
@@ -228,7 +299,8 @@
 
  - (NSMutableURLRequest *) createURLRequest:(NSURL *)url {
 	 NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];	
-	 [request setValue:[self createContentType:[self webRequestContentType]] forHTTPHeaderField:@"Content-Type"]; 
+	 [request setValue:[self createContentType:[self webRequestContentType]] forHTTPHeaderField:@"Accept"]; 
+	 [request setValue:[NSString stringWithFormat: @"BEARER %@", [[AHUserDefaults sharedDefaults] accessToken]] forHTTPHeaderField:@"Authorization"];
 	 
 	 return request;
  }

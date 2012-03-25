@@ -1,9 +1,9 @@
 
-#import "NRXMLParser.h"
+#import "AHXMLParser.h"
 
 NSString *const kXMLReaderTextNodeKey = @"text";
 
-@interface NRXMLParser (Internal)
+@interface AHXMLParser (Internal)
 
 - (id)initWithError:(NSError **)error;
 - (NSDictionary *)objectWithData:(NSData *)data;
@@ -60,7 +60,7 @@ NSString *const kXMLReaderTextNodeKey = @"text";
 
 @end
 
-@implementation NRXMLParser
+@implementation AHXMLParser
 
 #pragma mark -
 #pragma mark Public methods
@@ -69,14 +69,14 @@ NSString *const kXMLReaderTextNodeKey = @"text";
 {
     NSString *fullpath = [[NSBundle bundleForClass:self] pathForResource:path ofType:@"xml"];
 	NSData *data = [[NSFileManager defaultManager] contentsAtPath:fullpath];
-    NSDictionary *rootDictionary = [NRXMLParser dictionaryForXMLData:data error:errorPointer];
+    NSDictionary *rootDictionary = [AHXMLParser dictionaryForXMLData:data error:errorPointer];
     
 	return rootDictionary;
 }
 
 + (NSDictionary *)dictionaryForXMLData:(NSData *)data error:(NSError **)error
 {
-    NRXMLParser *reader = [[NRXMLParser alloc] initWithError:error];
+    AHXMLParser *reader = [[AHXMLParser alloc] initWithError:error];
     NSDictionary *rootDictionary = [reader objectWithData:data];
     
     return rootDictionary;
@@ -86,7 +86,7 @@ NSString *const kXMLReaderTextNodeKey = @"text";
 {
     NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
     
-    return [NRXMLParser dictionaryForXMLData:data error:error];
+    return [AHXMLParser dictionaryForXMLData:data error:error];
 }
 
 #pragma mark -

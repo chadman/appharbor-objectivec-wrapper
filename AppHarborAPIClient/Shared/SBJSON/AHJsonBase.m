@@ -27,11 +27,11 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "NRJsonBase.h"
-NSString * NRJSONErrorDomain = @"org.brautaset.JSON.ErrorDomain";
+#import "AHJsonBase.h"
+NSString * AHJSONErrorDomain = @"org.brautaset.JSON.ErrorDomain";
 
 
-@implementation NRJsonBase
+@implementation AHJsonBase
 
 @synthesize errorTrace;
 
@@ -48,7 +48,7 @@ NSString * NRJSONErrorDomain = @"org.brautaset.JSON.ErrorDomain";
                     nil];
     }
     
-    NSError *error = [NSError errorWithDomain:NRJSONErrorDomain code:code userInfo:userInfo];
+    NSError *error = [NSError errorWithDomain:AHJSONErrorDomain code:code userInfo:userInfo];
 
     [self willChangeValueForKey:@"errorTrace"];
     [errorTrace addObject:error];

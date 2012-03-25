@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface DateUtility : NSObject {
+@interface AHDateUtility : NSObject {
 
 }
 

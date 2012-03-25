@@ -28,14 +28,14 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "NRJsonBase.h"
+#import "AHJsonBase.h"
 
 /**
   @brief Options for the parser class.
  
  This exists so the SBJSON facade can implement the options in the parser without having to re-declare them.
  */
-@protocol NRJsonParserOptions
+@protocol AHJsonParserOptions
 
 /**
  @brief The maximum recursing depth of the parser.
@@ -70,7 +70,7 @@
  as we can thus avoid any loss of precision. (JSON allows ridiculously large numbers.)
  
  */
-@interface NRJsonParser : NRJsonBase <NRJsonParserOptions> {
+@interface AHJsonParser : AHJsonBase <AHJsonParserOptions> {
     
 @private
     const char *c;

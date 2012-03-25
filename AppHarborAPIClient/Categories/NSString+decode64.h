@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString_decode64 : NSObject
+@interface NSString (decode64)
+
+- (NSString *) decodeBase64;
 
 @end

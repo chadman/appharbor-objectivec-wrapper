@@ -29,7 +29,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * NRJSONErrorDomain;
+extern NSString * AHJSONErrorDomain;
 
 
 enum {
@@ -52,7 +52,7 @@ enum {
 
  This class contains the common error-handling code.
  */
-@interface NRJsonBase : NSObject {
+@interface AHJsonBase : NSObject {
     NSMutableArray *errorTrace;
 }
 

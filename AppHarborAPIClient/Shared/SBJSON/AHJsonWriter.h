@@ -28,14 +28,14 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "NRJsonBase.h"
+#import "AHJsonBase.h"
 
 /**
  @brief Options for the writer class.
  
  This exists so the SBJSON facade can implement the options in the writer without having to re-declare them.
  */
-@protocol NRJsonWriterOptions
+@protocol AHJsonWriterOptions
 
 /**
  @brief Whether we are generating human-readable (multiline) JSON.
@@ -80,7 +80,7 @@
  way you would expect.
  
  */
-@interface NRJsonWriter : NRJsonBase <NRJsonWriterOptions> {
+@interface AHJsonWriter : AHJsonBase <AHJsonWriterOptions> {
 
 @private
     BOOL sortKeys, humanReadable;

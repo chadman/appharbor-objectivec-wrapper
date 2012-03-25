@@ -1,5 +1,5 @@
 
-@interface Utility : NSObject {
+@interface AHUtility : NSObject {
 
 }
 

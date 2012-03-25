@@ -23,16 +23,14 @@
 @synthesize url;
 
 
-
 #pragma mark - Data Methods
 
 + (NSArray *)getAll:(NSError **)error {
 	
 	
-	WebRequest *request = [[WebRequest alloc] init];
-	NSString *stringURL = [NSString stringWithFormat:@"https://appharbor.com/application?access_token=%@", [[AHUserDefaults sharedDefaults] accessToken]];
+	AHWebRequest *request = [[AHWebRequest alloc] init];
 	
-	NSDictionary *results = [request makeWebRequest:[NSURL URLWithString:stringURL] 
+	NSArray *results = [request makeWebRequest:[NSURL URLWithString:@"https://appharbor.com/applications"] 
 									 withContentType:WebRequestContentTypeJson 
 										   withError:&*error];
 	
@@ -45,7 +43,7 @@
 		NSMutableArray *applications = [[NSMutableArray alloc] initWithObjects:nil];
 		
 		// Go through each one and add to the applications to an array
-		for (NSDictionary *value in [results objectForKey:@"application"]) {
+		for (NSDictionary *value in results) {
 			[applications addObject:[AHApplication populateWithDictionary:value]];
 		}
 		
@@ -53,31 +51,23 @@
 	}
 	
 	return nil;
-	
 }
 
 + (void)getAllUsingCallback:(void (^)(NSArray *))resultsBlock error:(void (^)(NSError *))errorBlock {
 	
 	
-	WebRequest *request = [[WebRequest alloc] init];
-	NSString *stringURL = [NSString stringWithFormat:@"https://appharbor.com/application?access_token=", [[AHUserDefaults sharedDefaults] accessToken]];
+	AHWebRequest *request = [[AHWebRequest alloc] init];
 	
-	
-	[request makeWebRequest:[NSURL URLWithString:stringURL] 
+	[request makeWebRequest:[NSURL URLWithString:@"https://appharbor.com/applications"] 
 			withContentType:WebRequestContentTypeJson 
 			  usingCallback:^(id returnedResults) {
 				  
 				  NSMutableArray *applications = [[NSMutableArray alloc] initWithObjects:nil];
-				  NSDictionary *applicationResults = nil;
 				  
 				  if (returnedResults && ![returnedResults isEqual:[NSNull null]]) {
-					  
-					  if ([returnedResults isKindOfClass:[NSDictionary class]]) {
-						  applicationResults = [((NSDictionary *)returnedResults) objectForKey:@"applications"];
-					  }
-					  
+
 					  // Go through each one and add to the applications to an array
-					  for (NSDictionary *value in [applicationResults objectForKey:@"application"]) {
+					  for (NSDictionary *value in returnedResults) {
 						  [applications addObject:[AHApplication populateWithDictionary:value]];
 					  }
 				  }
@@ -96,6 +86,181 @@
 	 ];
 }
 
++ (AHApplication *) getBySlug:(NSString *)appSlug error:(NSError *__autoreleasing *)error {
+	
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	NSString *urlString = [NSString stringWithFormat:@"https://appharbor.com/applications/%@", appSlug];
+	
+	NSDictionary *results = [request makeWebRequest:[NSURL URLWithString:urlString] 
+									withContentType:WebRequestContentTypeJson 
+										  withError:&*error];
+
+	if (*error) {
+		return nil;
+	}
+	
+	if (results && ![results isEqual:[NSNull null]]) {
+		return [AHApplication populateWithDictionary:results];
+	}
+	
+	return nil;
+}
+
++ (void) getBySlug:(NSString *)appSlug usingCallback:(void (^)(AHApplication *))application errorBlock:(void (^)(NSError *))error {
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	NSString *urlString = [NSString stringWithFormat:@"https://appharbor.com/applications/%@", appSlug];
+	
+	[request makeWebRequest:[NSURL URLWithString:urlString] 
+			withContentType:WebRequestContentTypeJson 
+			  usingCallback:^(id returnedResults) {
+				  
+				  if (application) {
+					  application([AHApplication populateWithDictionary:returnedResults]);
+				  }
+			  }
+				 errorBlock:^(NSError *localError) {
+					 
+					 if (error) {
+						 error(localError);
+					 }
+				 }
+	 ];
+}
+
+- (BOOL) create:(NSError *__autoreleasing *)error {
+	
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	
+	NSMutableString *json = [NSMutableString stringWithString:@"{"];
+	[json appendFormat:@"\"name\":\"%@\",", self.name];
+	[json appendString:@"\"region_identifier\" : \"amazon-web-services::us-east-1\""];
+	[json appendString:@"}"];
+	
+	[request postWebRequest:[NSURL URLWithString:@"https://appharbor.com/applications"] 
+			withContentType:WebRequestContentTypeJson 
+				   withData:[json dataUsingEncoding:NSUTF8StringEncoding] 
+				  withError:&*error];
+
+	if (*error) {
+		return NO;
+	}
+
+	return YES;
+}
+
+- (void) createUsingCallback:(void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error {
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	
+	NSMutableString *json = [NSMutableString stringWithString:@"{"];
+	[json appendFormat:@"\"name\":\"%@\",", self.name];
+	[json appendString:@"\"region_identifier\" : \"amazon-web-services::us-east-1\""];
+	[json appendString:@"}"];
+	
+	[request postWebRequest:[NSURL URLWithString:@"https://appharbor.com/applications"] 
+			withContentType:WebRequestContentTypeJson 
+				   withData:[json dataUsingEncoding:NSUTF8StringEncoding]  
+			  usingCallback:^(id returnedResults) {
+				  
+				  isSuccessful(YES);
+			  }
+				 errorBlock:^(NSError *localError) {
+					 
+					 if (error) {
+						 error(localError);
+					 }
+				 }
+	 ];
+
+	
+}
+
+- (BOOL) update:(NSError *__autoreleasing *)error {
+	
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	NSString *urlString = [NSString stringWithFormat:@"https://appharbor.com/applications/%@", self.slug];
+	
+	NSMutableString *json = [NSMutableString stringWithString:@"{"];
+	[json appendFormat:@"\"name\":\"%@\"", self.name];
+	[json appendString:@"}"];
+	
+	[request putWebRequest:[NSURL URLWithString:urlString] 
+		   withContentType:WebRequestContentTypeJson 
+				  withData:[json dataUsingEncoding:NSUTF8StringEncoding] 
+				 withError:&*error];
+	
+	if (*error) {
+		return NO;
+	}
+	
+	return YES;
+}
+
+- (void) updateUsingCallback:(void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error {
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	NSString *urlString = [NSString stringWithFormat:@"https://appharbor.com/applications/%@", self.slug];
+	
+	NSMutableString *json = [NSMutableString stringWithString:@"{"];
+	[json appendFormat:@"\"name\":\"%@\"", self.name];
+	[json appendString:@"}"];
+	
+	[request putWebRequest:[NSURL URLWithString:urlString] 
+		   withContentType:WebRequestContentTypeJson 
+				  withData:[json dataUsingEncoding:NSUTF8StringEncoding]  
+			 usingCallback:^(id returnedResults) {
+				  
+				  isSuccessful(YES);
+			  }
+				errorBlock:^(NSError *localError) {
+					 
+					 if (error) {
+						 error(localError);
+					 }
+				 }
+	 ];
+}
+
+- (BOOL) delete:(NSError *__autoreleasing *)error {
+	
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	NSString *urlString = [NSString stringWithFormat:@"https://appharbor.com/applications/%@", self.slug];
+	
+	[request deleteWebRequest:[NSURL URLWithString:urlString] 
+			  withContentType:WebRequestContentTypeJson 
+					withError:&*error];
+	
+	if (*error) {
+		return NO;
+	}
+	
+	return YES;
+}
+
+- (void) deleteUsingCallback:(void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error {
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	NSString *urlString = [NSString stringWithFormat:@"https://appharbor.com/applications/%@", self.slug];
+	
+	[request deleteWebRequest:[NSURL URLWithString:urlString] 
+			  withContentType:WebRequestContentTypeJson  
+				usingCallback:^(id returnedResults) {
+				 
+					isSuccessful(YES);
+				}
+				   errorBlock:^(NSError *localError) {
+					
+					   if (error) {
+							error(localError);
+						}
+				   }
+	 ];
+}
 
 #pragma mark - Population Methods
 
@@ -104,11 +269,10 @@
 }
 
 - (AHApplication *)initWithDictionary:(NSDictionary *)dict {
-	if (![super init]) {
-		return nil;
-	}
+	
+	self = [super init];
 
-	self.name = [dict objectForKey:@"@name"];
+	self.name = [dict objectForKey:@"name"];
 	self.slug = [dict objectForKey:@"slug"];
 	self.url = [dict objectForKey:@"url"];
 	

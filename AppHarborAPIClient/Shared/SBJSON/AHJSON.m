@@ -27,15 +27,15 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "NRJSON.h"
+#import "AHJSON.h"
 
-@implementation NRJSON
+@implementation AHJSON
 
 - (id)init {
     self = [super init];
     if (self) {
-        jsonWriter = [NRJsonWriter new];
-        jsonParser = [NRJsonParser new];
+        jsonWriter = [AHJsonWriter new];
+        jsonParser = [AHJsonParser new];
         [self setMaxDepth:512];
 
     }

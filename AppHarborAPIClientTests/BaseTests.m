@@ -30,5 +30,20 @@
 	[AHAuthorize killSettings];
 }
 
-
+- (void) runLoop {
+    
+    @try {
+        // This executes another run loop.
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+        // Sleep 1/100th sec
+        usleep(10000);
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+        
+    }
+	
+}
 @end

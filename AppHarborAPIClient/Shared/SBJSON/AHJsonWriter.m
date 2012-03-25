@@ -27,9 +27,9 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "NRJsonWriter.h"
+#import "AHJsonWriter.h"
 
-@interface NRJsonWriter ()
+@interface AHJsonWriter ()
 
 - (BOOL)appendValue:(id)fragment into:(NSMutableString*)json;
 - (BOOL)appendArray:(NSArray*)fragment into:(NSMutableString*)json;
@@ -40,7 +40,7 @@
 
 @end
 
-@implementation NRJsonWriter
+@implementation AHJsonWriter
 
 @synthesize sortKeys;
 @synthesize humanReadable;

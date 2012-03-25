@@ -2,7 +2,7 @@
 #import "Utility.h"
 #import "DateUtility.h"
 
-@interface Utility () 
+@interface AHUtility () 
 
 +(NSDictionary *)getPList: (NSString *)pListFileName;
 
@@ -12,7 +12,7 @@
 NSString *_apiListFileName		= @"FTAPI.plist";
 NSString *_infoListFileName		= @"info.plist";
 
-@implementation Utility
+@implementation AHUtility
 
 + (NSString *)getFTAPIValueFromPList: (NSString *)pListKey {
 	
@@ -86,7 +86,7 @@ NSString *_infoListFileName		= @"info.plist";
 		return nil;
 	}
 	else {
-		return [DateUtility dateFromString:value];
+		return [AHDateUtility dateFromString:value];
 	}
 }
 
@@ -95,7 +95,7 @@ NSString *_infoListFileName		= @"info.plist";
 		return nil;
 	}
 	else {
-		return [DateUtility dateAndTimeFromString:value];
+		return [AHDateUtility dateAndTimeFromString:value];
 	}
 }
 
@@ -105,7 +105,7 @@ NSString *_infoListFileName		= @"info.plist";
 		return nil;
 	}
 	else {
-		return [DateUtility dateFromString:value withDateFormat:format];
+		return [AHDateUtility dateFromString:value withDateFormat:format];
 	}
 }
 

@@ -79,6 +79,10 @@
 	
 }
 
++ (NSString *) accessToken {
+	return [[AHUserDefaults sharedDefaults] accessToken];
+}
+
 + (void) killSettings {
 	[[AHUserDefaults sharedDefaults] killAll];
 }

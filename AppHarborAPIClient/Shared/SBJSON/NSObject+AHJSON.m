@@ -27,16 +27,16 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "NSObject+NRJSON.h"
-#import "NRJsonWriter.h"
+#import "NSObject+AHJSON.h"
+#import "AHJsonWriter.h"
 
-static const NRJsonWriter *jsonWriter;
+static const AHJsonWriter *jsonWriter;
 
-@implementation NSObject (NSObject_NRJSON)
+@implementation NSObject (NSObject_AHJSON)
 
 - (NSString *)JSONFragment {
 	if (!jsonWriter)
-		jsonWriter = [NRJsonWriter new];
+		jsonWriter = [AHJsonWriter new];
 	
     NSString *json = [jsonWriter stringWithObject:self allowScalar:YES];
     if (json)
@@ -48,7 +48,7 @@ static const NRJsonWriter *jsonWriter;
 
 - (NSString *)JSONRepresentation {
 	if (!jsonWriter)
-		jsonWriter = [NRJsonWriter new];
+		jsonWriter = [AHJsonWriter new];
     
     NSString *json = [jsonWriter stringWithObject:self allowScalar:NO];
     if (json)

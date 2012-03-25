@@ -27,17 +27,17 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "NSString+NRJSON.h"
-#import "NRJsonParser.h"
+#import "NSString+AHJSON.h"
+#import "AHJsonParser.h"
 
-static const NRJsonParser *jsonParser;
+static const AHJsonParser *jsonParser;
 
-@implementation NSString (NSString_NRJSON)
+@implementation NSString (NSString_AHJSON)
 
 - (id)JSONFragmentValue
 {
 	if (!jsonParser)
-		jsonParser = [NRJsonParser new];
+		jsonParser = [AHJsonParser new];
     
     id repr = [jsonParser objectWithString:self allowScalar:YES];
     if (repr)
@@ -50,7 +50,7 @@ static const NRJsonParser *jsonParser;
 - (id)JSONValue
 {
 	if (!jsonParser)
-		jsonParser = [NRJsonParser new];
+		jsonParser = [AHJsonParser new];
     
     id repr = [jsonParser objectWithString:self allowScalar:NO];
     if (repr)

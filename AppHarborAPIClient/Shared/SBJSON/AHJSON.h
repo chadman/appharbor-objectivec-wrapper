@@ -28,19 +28,19 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "NRJsonParser.h"
-#import "NRJsonWriter.h"
+#import "AHJsonParser.h"
+#import "AHJsonWriter.h"
 
 /**
  @brief Facade for SBJsonWriter/SBJsonParser.
 
  This class exists for backwards compatibility with previous releases. It simply forwards requests to SBJsonWriter and SBJsonParser.
  */
-@interface NRJSON : NRJsonBase <NRJsonParserOptions, NRJsonWriterOptions> {
+@interface AHJSON : AHJsonBase <AHJsonParserOptions, AHJsonWriterOptions> {
 
 @private    
-    NRJsonParser *jsonParser;
-    NRJsonWriter *jsonWriter;
+    AHJsonParser *jsonParser;
+    AHJsonWriter *jsonWriter;
 }
 
 

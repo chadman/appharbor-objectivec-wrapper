@@ -10,7 +10,20 @@
 //  See Also: http://developer.apple.com/iphone/library/documentation/Xcode/Conceptual/iphone_development/135-Unit_Testing_Applications/unit_testing_applications.html
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "BaseTests.h"
 
-@interface AHConfigurationVariableTests : SenTestCase
+@interface AHConfigurationVariableTests : BaseTests
+
+- (void) testGetAllConfigurationVariables;
+
+- (void) testGetAllConfigurationVariablesUsingCallback;
+
+- (void) testGetConfigurationVariableByUrl;
+
+- (void) testGetConfigurationVariableByUrlUsingCallback;
+
+- (void) testCreateConfigurationVariable;
+
+- (void) testCreateConfigurationVariableUsingCallback;
 
 @end

@@ -5,7 +5,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NRXMLParser : NSObject <NSXMLParserDelegate>
+@interface AHXMLParser : NSObject <NSXMLParserDelegate>
 {
     NSMutableArray *dictionaryStack;
     NSMutableString *textInProgress;

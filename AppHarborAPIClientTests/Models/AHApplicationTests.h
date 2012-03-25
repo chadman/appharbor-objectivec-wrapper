@@ -16,4 +16,14 @@
 
 - (void) testGetAllApplications;
 
+- (void) testGetAllApplicationsUsingCallback;
+
+- (void) testGetApplicationByID;
+
+- (void) testGetAllicationByIDUsingCallback;
+
+- (void) testCreateApplication;
+
+- (void) testCreateApplicationUsingCallback;
+
 @end

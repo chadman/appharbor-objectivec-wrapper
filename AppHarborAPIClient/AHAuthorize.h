@@ -109,6 +109,14 @@
 + (void) setAccessToken: (NSString *)token;
 
 /*!
+ @method	accessToken
+ 
+ @abstract	
+ Returns the access token that is currently saved.
+*/
++ (NSString *) accessToken;
+
+/*!
  @method	killSettings
  
  @abstract

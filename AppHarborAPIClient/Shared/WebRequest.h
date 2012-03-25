@@ -9,7 +9,7 @@ typedef enum {
 	WebRequestContentTypeJson, // The content type of the request is json
 } WebRequestContentType;
 
-@interface WebRequest : NSObject {
+@interface AHWebRequest : NSObject {
 
 	NSURL *requestURL;
 	NSURLResponse *response;
@@ -37,6 +37,11 @@ typedef enum {
 - (id) postWebRequest: (NSURL *)theUrl withContentType: (WebRequestContentType)contentType withData: (NSData *)data withError:(NSError **)error;
 
 - (void) postWebRequest: (NSURL *)theUrl withContentType: (WebRequestContentType)contentType withData: (NSData *)data usingCallback:(void (^)(id))returnedResults errorBlock:(void (^)(NSError *))error;
+
+- (BOOL) deleteWebRequest: (NSURL *)theUrl withContentType: (WebRequestContentType)contentType withError:(NSError **)error;
+
+- (void) deleteWebRequest: (NSURL *)theUrl withContentType: (WebRequestContentType)contentType usingCallback:(void (^)(id))returnedResults errorBlock:(void (^)(NSError *))error;
+
 
 @end
 

@@ -27,9 +27,9 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "NRJsonParser.h"
+#import "AHJsonParser.h"
 
-@interface NRJsonParser ()
+@interface AHJsonParser ()
 
 - (BOOL)scanValue:(NSObject **)o;
 
@@ -54,7 +54,7 @@
 #define skipDigits(c) while (isdigit(*c)) c++
 
 
-@implementation NRJsonParser
+@implementation AHJsonParser
 @synthesize maxDepth;
 
 static char ctrl[0x22];

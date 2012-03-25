@@ -34,7 +34,7 @@
  
 This is a category on NSString that adds methods for parsing the target string.
 */
-@interface NSString (NSString_NRJSON)
+@interface NSString (NSString_AHJSON)
 
 /// Returns the object represented in the receiver, or nil on error. 
 - (id)JSONFragmentValue;

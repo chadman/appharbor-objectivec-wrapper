@@ -10,7 +10,18 @@
 //  See Also: http://developer.apple.com/iphone/library/documentation/Xcode/Conceptual/iphone_development/135-Unit_Testing_Applications/unit_testing_applications.html
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "BaseTests.h"
 
-@interface AHCollaboratorTests : SenTestCase
+@interface AHCollaboratorTests : BaseTests
+
+- (void) testGetAllCollaborators;
+
+- (void) testGetAllCollaboratorsUsingCallback;
+
+- (void) testGetCollaborator;
+
+- (void) testGetCollaboratorUsingCallback;
+
+- (void) testCreateCollaborator;
 
 @end

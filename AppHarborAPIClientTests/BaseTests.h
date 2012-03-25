@@ -13,4 +13,6 @@
 
 @interface BaseTests : SenTestCase
 
+- (void) runLoop;
+
 @end
