@@ -27,6 +27,8 @@
 		9C495C66151EEEBD002AA688 /* AHBuild.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C495C64151EEEBC002AA688 /* AHBuild.h */; };
 		9C495C67151EEEBD002AA688 /* AHBuild.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C495C65151EEEBC002AA688 /* AHBuild.m */; };
 		9C495C6A151EFA22002AA688 /* AHBuildTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C495C69151EFA22002AA688 /* AHBuildTests.m */; };
+		9C495CA615202B26002AA688 /* AHError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C495CA415202B26002AA688 /* AHError.h */; };
+		9C495CA715202B26002AA688 /* AHError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C495CA515202B26002AA688 /* AHError.m */; };
 		FD9C17DC1513C977004A8308 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17DB1513C977004A8308 /* Foundation.framework */; };
 		FD9C17E21513C977004A8308 /* AHAuthorize.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C17E11513C977004A8308 /* AHAuthorize.m */; };
 		FD9C17EA1513C977004A8308 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17E91513C977004A8308 /* SenTestingKit.framework */; };
@@ -97,6 +99,8 @@
 		9C495C65151EEEBC002AA688 /* AHBuild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHBuild.m; path = Model/AHBuild.m; sourceTree = "<group>"; };
 		9C495C68151EFA21002AA688 /* AHBuildTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHBuildTests.h; path = Models/AHBuildTests.h; sourceTree = "<group>"; };
 		9C495C69151EFA22002AA688 /* AHBuildTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHBuildTests.m; path = Models/AHBuildTests.m; sourceTree = "<group>"; };
+		9C495CA415202B26002AA688 /* AHError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHError.h; path = Model/AHError.h; sourceTree = "<group>"; };
+		9C495CA515202B26002AA688 /* AHError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHError.m; path = Model/AHError.m; sourceTree = "<group>"; };
 		FD9C17D81513C977004A8308 /* libAppHarborAPIClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAppHarborAPIClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9C17DB1513C977004A8308 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD9C17DF1513C977004A8308 /* AppHarborAPIClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppHarborAPIClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 				9C495C5E151EE42F002AA688 /* AHConfigurationVariable.m */,
 				9C495C64151EEEBC002AA688 /* AHBuild.h */,
 				9C495C65151EEEBC002AA688 /* AHBuild.m */,
+				9C495CA415202B26002AA688 /* AHError.h */,
+				9C495CA515202B26002AA688 /* AHError.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				9C495C5B151EDE3F002AA688 /* NSString+decode64.h in Headers */,
 				9C495C5F151EE42F002AA688 /* AHConfigurationVariable.h in Headers */,
 				9C495C66151EEEBD002AA688 /* AHBuild.h in Headers */,
+				9C495CA615202B26002AA688 /* AHError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +484,7 @@
 				9C495C5C151EDE3F002AA688 /* NSString+decode64.m in Sources */,
 				9C495C60151EE42F002AA688 /* AHConfigurationVariable.m in Sources */,
 				9C495C67151EEEBD002AA688 /* AHBuild.m in Sources */,
+				9C495CA715202B26002AA688 /* AHError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

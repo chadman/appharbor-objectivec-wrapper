@@ -1,15 +1,8 @@
-//
-//  DateUtility.m
-//  F1Touch
-//
-//  Created by Matt Vasquez on 4/28/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
-//
 
 #import "DateUtility.h"
 
 
-@implementation AHDateUtility
+@implementation GHDateUtility
 
 + (NSDate *)dateAndTimeFromString:(NSString *)dateString {
 		

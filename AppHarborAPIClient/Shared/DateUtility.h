@@ -1,15 +1,5 @@
-//
-//  DateUtility.h
-//  F1Touch
-//
-//  Created by Matt Vasquez on 4/28/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
-//
 
-#import <Foundation/Foundation.h>
-
-
-@interface AHDateUtility : NSObject {
+@interface GHDateUtility : NSObject {
 
 }
 
