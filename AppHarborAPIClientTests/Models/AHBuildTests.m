@@ -16,7 +16,7 @@
 	
 	NSError *error = nil;
 	NSArray *applications =[AHApplication getAll:&error];
-	NSString *appID = [(AHApplication *) [applications objectAtIndex:0] slug];
+	NSString *appID = [(AHApplication *) [applications objectAtIndex:1] slug];
 
 	NSArray *builds = [AHBuild getAllByAppID:appID error:&error];
 	
@@ -26,15 +26,15 @@
 
 - (void) testGetAllBuildsUsingCallback {
 	
-	__block BOOL done= NO;
+	__block BOOL done = NO;
     int count = 0;
 	
 	NSError *error = nil;
 	NSArray *applications =[AHApplication getAll:&error];
-	NSString *appID = [(AHApplication *) [applications objectAtIndex:0] slug];
+	NSString *appID = [(AHApplication *) [applications objectAtIndex:1] slug];
 	
-	[AHBuild getAllByAppID:appID 
-			 usingCallback:^(NSArray *builds) {
+	
+	[AHBuild getAllByAppID:appID usingCallback:^(NSArray *builds) {
 				 STAssertNotNil(builds, @"builds were not returned, something went wrong.");
 				 done = YES;
 			 }
@@ -62,7 +62,7 @@
 	
 	NSError *error = nil;
 	NSArray *applications =[AHApplication getAll:&error];
-	NSString *appID = [(AHApplication *) [applications objectAtIndex:0] slug];
+	NSString *appID = [(AHApplication *) [applications objectAtIndex:1] slug];
 	NSArray *builds = [AHBuild getAllByAppID:appID error:&error];
 	NSString *buildURL = [(AHBuild *) [builds objectAtIndex:0] url];
 	
@@ -77,7 +77,7 @@
 	__block BOOL done= NO;
     int count = 0;
 	NSArray *applications =[AHApplication getAll:&localError];
-	NSString *appID = [(AHApplication *) [applications objectAtIndex:0] slug];
+	NSString *appID = [(AHApplication *) [applications objectAtIndex:1] slug];
 	NSArray *builds = [AHBuild getAllByAppID:appID error:&localError];
 	NSString *buildURL = [(AHBuild *) [builds objectAtIndex:0] url];
 	

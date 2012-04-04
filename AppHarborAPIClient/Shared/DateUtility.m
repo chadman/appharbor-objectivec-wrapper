@@ -2,7 +2,7 @@
 #import "DateUtility.h"
 
 
-@implementation GHDateUtility
+@implementation AHDateUtility
 
 + (NSDate *)dateAndTimeFromString:(NSString *)dateString {
 		

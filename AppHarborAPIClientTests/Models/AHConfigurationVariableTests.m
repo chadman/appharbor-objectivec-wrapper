@@ -17,7 +17,7 @@
 	NSError *error = nil;
 	NSArray *applications =[AHApplication getAll:&error];
 	
-	NSArray *configurationVariables = [AHConfigurationVariable getAllByAppID:[(AHApplication *) [applications objectAtIndex:0] slug] error:&error];
+	NSArray *configurationVariables = [AHConfigurationVariable getAllByAppID:[(AHApplication *) [applications objectAtIndex:1] slug] error:&error];
 	
 	STAssertNotNil(configurationVariables, @"configuration variables are nil, you fail.");
 	
@@ -31,7 +31,7 @@
 	NSError *error = nil;
 	NSArray *applications =[AHApplication getAll:&error];
 	
-	[AHConfigurationVariable getAllByAppID:[(AHApplication *) [applications objectAtIndex:0] slug] 
+	[AHConfigurationVariable getAllByAppID:[(AHApplication *) [applications objectAtIndex:1] slug] 
 							 usingCallback:^(id configurationVariables) {
 		
 		STAssertNotNil(configurationVariables, @"configuration variables were not returned, something went wrong.");
@@ -63,7 +63,7 @@
 	
 	NSError *error = nil;
 	NSArray *applications =[AHApplication getAll:&error];
-	NSArray *configurationVariables = [AHConfigurationVariable getAllByAppID:[(AHApplication *) [applications objectAtIndex:0] slug] error:&error];
+	NSArray *configurationVariables = [AHConfigurationVariable getAllByAppID:[(AHApplication *) [applications objectAtIndex:1] slug] error:&error];
 	
 	AHConfigurationVariable *configVariable = [AHConfigurationVariable getByUrl:[(AHConfigurationVariable *) [configurationVariables objectAtIndex:0] url] error:&error];
 	STAssertNotNil(configVariable, @"configuration variable is nil, you fail.");
@@ -76,7 +76,7 @@
 	__block BOOL done= NO;
     int count = 0;
 	NSArray *applications =[AHApplication getAll:&error];
-	NSArray *configurationVariables = [AHConfigurationVariable getAllByAppID:[(AHApplication *) [applications objectAtIndex:0] slug] error:&error];
+	NSArray *configurationVariables = [AHConfigurationVariable getAllByAppID:[(AHApplication *) [applications objectAtIndex:1] slug] error:&error];
 	
 	[AHConfigurationVariable getByUrl:[(AHConfigurationVariable *) [configurationVariables objectAtIndex:0] url]
 						usingCallback:^(AHConfigurationVariable *configVariable) {

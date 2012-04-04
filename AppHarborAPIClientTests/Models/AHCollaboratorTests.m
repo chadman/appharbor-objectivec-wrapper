@@ -17,7 +17,7 @@
 	NSError *error = nil;
 	// Get all the applications so we can get the collaborators
 	NSArray *applications = [AHApplication getAll:&error];	
-	NSArray *collaborators = [AHCollaborator getAllByAppID:[(AHApplication *)[applications objectAtIndex:0] slug]  error:&error];
+	NSArray *collaborators = [AHCollaborator getAllByAppID:[(AHApplication *)[applications objectAtIndex:1] slug]  error:&error];
 	STAssertNotNil(collaborators, @"collaborators were not populated, you fail.");
 }
 
@@ -28,7 +28,7 @@
 	__block BOOL done= NO;
     int count = 0;
 	NSArray *applications = [AHApplication getAll:&error];
-	NSString *appName = [(AHApplication *)[applications objectAtIndex:0] slug];
+	NSString *appName = [(AHApplication *)[applications objectAtIndex:1] slug];
 	
 	[AHCollaborator getAllByAppID:appName 
 					usingCallback:^(NSArray *results) {
@@ -61,7 +61,7 @@
 	NSError *error = nil;
 	// Get all the applications so we can get the collaborators
 	NSArray *applications = [AHApplication getAll:&error];	
-	NSArray *collaborators = [AHCollaborator getAllByAppID:[(AHApplication *)[applications objectAtIndex:0] slug]  error:&error];
+	NSArray *collaborators = [AHCollaborator getAllByAppID:[(AHApplication *)[applications objectAtIndex:1] slug]  error:&error];
 	
 	AHCollaborator *collaborator = [AHCollaborator getByUserUrl:[(AHCollaborator *) [collaborators objectAtIndex:0] url] 														 
 														  error:&error];
@@ -75,7 +75,7 @@
 	__block BOOL done= NO;
     int count = 0;
 	NSArray *applications = [AHApplication getAll:&error];
-	NSString *appName = [(AHApplication *)[applications objectAtIndex:0] slug];
+	NSString *appName = [(AHApplication *)[applications objectAtIndex:1] slug];
 	NSArray *collaborators = [AHCollaborator getAllByAppID:appName error:&error];
 	
 	[AHCollaborator getByUserUrl:[(AHCollaborator *) [collaborators objectAtIndex:0] url] 

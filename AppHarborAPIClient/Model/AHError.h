@@ -10,6 +10,17 @@
 
 @interface AHError : NSObject <NSCoding>
 
+@property (strong, nonatomic) NSString *commitID;
+@property (strong, nonatomic) NSDate *date;
+@property (strong, nonatomic) NSString *requestPath;
+@property (strong, nonatomic) NSString *message;
+@property (strong, nonatomic) NSString *exceptionStackTrace;
+@property (strong, nonatomic) NSString *exceptionMessage;
+@property (strong, nonatomic) NSString *exceptionType;
+@property (strong, nonatomic) NSString *innerException;
+@property (strong, nonatomic) NSString *url;
+
+
 + (AHError *) populateWithDictionary: (NSDictionary *)dict;
 
 

@@ -1,5 +1,5 @@
 
-@interface GHDateUtility : NSObject {
+@interface AHDateUtility : NSObject {
 
 }
 

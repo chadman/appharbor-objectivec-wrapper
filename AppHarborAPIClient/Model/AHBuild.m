@@ -61,8 +61,7 @@
 	return nil;
 }
 
-+ (void) getAllByAppID:(NSString *)appID usingCallback:(void (^)(NSArray *))resultsBlock error:(void (^)(NSError *))errorBlock {
-	
++ (void)getAllByAppID:(NSString *)appID usingCallback:(void (^)(NSArray *))resultsBlock errorBlock:(void (^)(NSError *))error {	
 	
 	AHWebRequest *request = [[AHWebRequest alloc] init];
 	NSString *urlString = [NSString stringWithFormat:@"https://appharbor.com/applications/%@/builds", appID];
@@ -88,8 +87,8 @@
 			  }
 				 errorBlock:^(NSError *localError) {
 					 
-					 if (errorBlock) {
-						 errorBlock(localError);
+					 if (error) {
+						 error(localError);
 					 }
 				 }
 	 ];
