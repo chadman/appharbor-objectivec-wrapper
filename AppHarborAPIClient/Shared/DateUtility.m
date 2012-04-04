@@ -15,6 +15,11 @@
 			[df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
 			date = [df dateFromString:dateString];
 		}
+		
+		if (!date) {
+			[df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+			date = [df dateFromString:dateString];
+		}
 		return date;	
 	}
 	else {
