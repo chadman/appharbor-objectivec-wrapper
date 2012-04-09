@@ -105,7 +105,7 @@
 		NSLog(@"Web Request Response :: %@", responseBody);
 		
 		if (statusCode == 201) {
-			return nil;
+			return [[localResponse allHeaderFields] objectForKey:@"Location"];
 		}
 		else {
 			*error = [NSError errorWithDomain:@"com.52projects.appharborAPI" code:statusCode userInfo:nil];
@@ -266,7 +266,14 @@
 			break;
 		case WebRequestContentTypeJson:
 			if (statusCode < 300) {
-				if (statusCode != 204) {
+				
+				if(statusCode == 201) {
+					
+					NSString *location = [[((NSHTTPURLResponse *)response) allHeaderFields] objectForKey:@"Location"];
+					self.storedBlock(location);
+				}
+				
+				else if (statusCode != 204) {
 					self.storedBlock([responseBody JSONValue]);
 				}
 				else {

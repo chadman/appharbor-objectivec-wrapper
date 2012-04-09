@@ -1,13 +1,13 @@
 
-@interface AHHostname : NSObject <NSCoding>
+@interface AHServiceHook : NSObject <NSCoding>
 
 
-@property (strong, nonatomic) NSString *value;
-@property (nonatomic) BOOL canonical;
-@property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *applicationID;
+@property (strong, nonatomic) NSString *value;
+@property (strong, nonatomic) NSString *url;
 
-+ (AHHostname *) populateWithDictionary: (NSDictionary *)dict;
+
++ (AHServiceHook *) populateWithDictionary: (NSDictionary *)dict;
 
 
 /*! 
@@ -78,7 +78,7 @@
  about the application that was retrieved
  
  */
-+ (AHHostname *)getByUrl:(NSString *)url error:(NSError **)error;
++ (AHServiceHook *)getByUrl:(NSString *)url error:(NSError **)error;
 
 
 /*! 
@@ -104,7 +104,7 @@
  a block is available for that
  
  */
-+ (void)getByUrl:(NSString *)url usingCallback:(void (^)(AHHostname *))hostname errorBlock:(void (^)(NSError *))error;
++ (void)getByUrl:(NSString *)url usingCallback:(void (^)(AHServiceHook *))hostname errorBlock:(void (^)(NSError *))error;
 
 /*! 
  @method      create:

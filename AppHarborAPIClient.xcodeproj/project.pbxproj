@@ -33,6 +33,12 @@
 		9CCDC437152BF1AE00E3A862 /* AHHostname.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCDC435152BF1AC00E3A862 /* AHHostname.h */; };
 		9CCDC438152BF1AE00E3A862 /* AHHostname.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC436152BF1AD00E3A862 /* AHHostname.m */; };
 		9CCDC43B152BF57300E3A862 /* AHHostnameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC43A152BF57300E3A862 /* AHHostnameTests.m */; };
+		9CCDC467152D49E200E3A862 /* AHServiceHook.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCDC465152D49E200E3A862 /* AHServiceHook.h */; };
+		9CCDC468152D49E200E3A862 /* AHServiceHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC466152D49E200E3A862 /* AHServiceHook.m */; };
+		9CCDC46C152D5A6C00E3A862 /* AHServieHookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC46B152D5A6C00E3A862 /* AHServieHookTests.m */; };
+		9CCDC4881532512C00E3A862 /* AHTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCDC4861532512B00E3A862 /* AHTest.h */; };
+		9CCDC4891532512C00E3A862 /* AHTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC4871532512B00E3A862 /* AHTest.m */; };
+		9CCDC48C1532597B00E3A862 /* AHTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC48B1532597B00E3A862 /* AHTestTests.m */; };
 		FD9C17DC1513C977004A8308 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17DB1513C977004A8308 /* Foundation.framework */; };
 		FD9C17E21513C977004A8308 /* AHAuthorize.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C17E11513C977004A8308 /* AHAuthorize.m */; };
 		FD9C17EA1513C977004A8308 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9C17E91513C977004A8308 /* SenTestingKit.framework */; };
@@ -111,6 +117,14 @@
 		9CCDC436152BF1AD00E3A862 /* AHHostname.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHHostname.m; path = Model/AHHostname.m; sourceTree = "<group>"; };
 		9CCDC439152BF57300E3A862 /* AHHostnameTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHHostnameTests.h; path = Models/AHHostnameTests.h; sourceTree = "<group>"; };
 		9CCDC43A152BF57300E3A862 /* AHHostnameTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHHostnameTests.m; path = Models/AHHostnameTests.m; sourceTree = "<group>"; };
+		9CCDC465152D49E200E3A862 /* AHServiceHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHServiceHook.h; path = Model/AHServiceHook.h; sourceTree = "<group>"; };
+		9CCDC466152D49E200E3A862 /* AHServiceHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHServiceHook.m; path = Model/AHServiceHook.m; sourceTree = "<group>"; };
+		9CCDC46A152D5A6C00E3A862 /* AHServieHookTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHServieHookTests.h; path = Models/AHServieHookTests.h; sourceTree = "<group>"; };
+		9CCDC46B152D5A6C00E3A862 /* AHServieHookTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHServieHookTests.m; path = Models/AHServieHookTests.m; sourceTree = "<group>"; };
+		9CCDC4861532512B00E3A862 /* AHTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTest.h; path = Model/AHTest.h; sourceTree = "<group>"; };
+		9CCDC4871532512B00E3A862 /* AHTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTest.m; path = Model/AHTest.m; sourceTree = "<group>"; };
+		9CCDC48A1532597B00E3A862 /* AHTestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTestTests.h; path = Models/AHTestTests.h; sourceTree = "<group>"; };
+		9CCDC48B1532597B00E3A862 /* AHTestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTestTests.m; path = Models/AHTestTests.m; sourceTree = "<group>"; };
 		FD9C17D81513C977004A8308 /* libAppHarborAPIClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAppHarborAPIClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9C17DB1513C977004A8308 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD9C17DF1513C977004A8308 /* AppHarborAPIClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppHarborAPIClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -198,6 +212,10 @@
 				9CCDC42F152BE63D00E3A862 /* AHErrorTests.m */,
 				9CCDC439152BF57300E3A862 /* AHHostnameTests.h */,
 				9CCDC43A152BF57300E3A862 /* AHHostnameTests.m */,
+				9CCDC46A152D5A6C00E3A862 /* AHServieHookTests.h */,
+				9CCDC46B152D5A6C00E3A862 /* AHServieHookTests.m */,
+				9CCDC48A1532597B00E3A862 /* AHTestTests.h */,
+				9CCDC48B1532597B00E3A862 /* AHTestTests.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -340,6 +358,10 @@
 				9C495CA515202B26002AA688 /* AHError.m */,
 				9CCDC435152BF1AC00E3A862 /* AHHostname.h */,
 				9CCDC436152BF1AD00E3A862 /* AHHostname.m */,
+				9CCDC465152D49E200E3A862 /* AHServiceHook.h */,
+				9CCDC466152D49E200E3A862 /* AHServiceHook.m */,
+				9CCDC4861532512B00E3A862 /* AHTest.h */,
+				9CCDC4871532512B00E3A862 /* AHTest.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -382,6 +404,8 @@
 				9C495C66151EEEBD002AA688 /* AHBuild.h in Headers */,
 				9C495CA615202B26002AA688 /* AHError.h in Headers */,
 				9CCDC437152BF1AE00E3A862 /* AHHostname.h in Headers */,
+				9CCDC467152D49E200E3A862 /* AHServiceHook.h in Headers */,
+				9CCDC4881532512C00E3A862 /* AHTest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +527,8 @@
 				9C495C67151EEEBD002AA688 /* AHBuild.m in Sources */,
 				9C495CA715202B26002AA688 /* AHError.m in Sources */,
 				9CCDC438152BF1AE00E3A862 /* AHHostname.m in Sources */,
+				9CCDC468152D49E200E3A862 /* AHServiceHook.m in Sources */,
+				9CCDC4891532512C00E3A862 /* AHTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +545,8 @@
 				9C495C6A151EFA22002AA688 /* AHBuildTests.m in Sources */,
 				9CCDC430152BE63D00E3A862 /* AHErrorTests.m in Sources */,
 				9CCDC43B152BF57300E3A862 /* AHHostnameTests.m in Sources */,
+				9CCDC46C152D5A6C00E3A862 /* AHServieHookTests.m in Sources */,
+				9CCDC48C1532597B00E3A862 /* AHTestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

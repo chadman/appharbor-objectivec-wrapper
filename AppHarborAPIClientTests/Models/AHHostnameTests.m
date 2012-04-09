@@ -27,7 +27,7 @@
 	
 }
 
-- (void) testGetAllApplicationsUsingCallback {
+- (void) testGetAllHostnamesByApplicationUsingCallback {
 	
 	__block BOOL done= NO;
     int count = 0;
@@ -156,11 +156,11 @@
 	[hostname setValue:@"objwrapper.com"];
 	[hostname setApplicationID:appName];
 	
-	[hostname createUsingCallback:^(BOOL isSuccessful) {
-		STAssertTrue(isSuccessful, @"creating hostname did not save.");
+	[hostname createUsingCallback:^(NSString * returnLocation) {
+		STAssertTrue([returnLocation length] > 0, @"creating hostname did not save.");
 		done = YES;
 		
-		if (isSuccessful) {
+		if ([returnLocation length] > 0) {
 			NSArray *allHostnames = [AHHostname getAllByAppID:appName error:&localError];
 			
 			for (AHHostname *host in allHostnames) {

@@ -146,19 +146,21 @@
 	[json appendFormat:@"\"value\":\"%@\"", self.value];
 	[json appendString:@"}"];
 	
-	[request postWebRequest:[NSURL URLWithString:urlString] 
-			withContentType:WebRequestContentTypeJson 
-				   withData:[json dataUsingEncoding:NSUTF8StringEncoding] 
-				  withError:&*error];
+	NSString *location = [request postWebRequest:[NSURL URLWithString:urlString] 
+								 withContentType:WebRequestContentTypeJson 
+										withData:[json dataUsingEncoding:NSUTF8StringEncoding] 
+									   withError:&*error];
 	
 	if (*error) {
 		return NO;
 	}
-	
-	return YES;
+	else {
+		[self setUrl:location];
+		return YES;
+	}
 }
 
-- (void) createUsingCallback:(void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error {
+- (void) createUsingCallback:(void (^)(NSString *))location errorBlock:(void (^)(NSError *))error {
 	
 	AHWebRequest *request = [[AHWebRequest alloc] init];
 	NSString *urlString = [NSString stringWithFormat:@"https://appharbor.com/applications/%@/hostnames", self.applicationID];
@@ -170,9 +172,9 @@
 	[request postWebRequest:[NSURL URLWithString:urlString] 
 			withContentType:WebRequestContentTypeJson 
 				   withData:[json dataUsingEncoding:NSUTF8StringEncoding]  
-			  usingCallback:^(id returnedResults) {
+			  usingCallback:^(id returnLocation) {
 				  
-				  isSuccessful(YES);
+				  location(returnLocation);
 			  }
 				 errorBlock:^(NSError *localError) {
 					 

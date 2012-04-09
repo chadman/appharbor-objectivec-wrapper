@@ -1,18 +1,33 @@
 
-@interface AHError : NSObject <NSCoding>
 
-@property (strong, nonatomic) NSString *commitID;
-@property (strong, nonatomic) NSDate *date;
-@property (strong, nonatomic) NSString *requestPath;
-@property (strong, nonatomic) NSString *message;
-@property (strong, nonatomic) NSString *exceptionStackTrace;
-@property (strong, nonatomic) NSString *exceptionMessage;
-@property (strong, nonatomic) NSString *exceptionType;
-@property (strong, nonatomic) NSString *innerException;
-@property (strong, nonatomic) NSString *url;
+typedef enum {
+	AHTestStatusSuccess, // Test status of success
+	AHTestStatusFailed // Test status of failed
+} AHTestStatus;
+
+typedef enum {
+	AHTestKindGroup,
+	AHTestKindTest
+} AHTestKind;
+
+@interface AHTest : NSObject <NSCoding>
+
+@property (strong, nonatomic) NSString *testID;
+@property (strong, nonatomic) NSString *name;
+@property (nonatomic) AHTestStatus status;
+@property (nonatomic) AHTestKind kind;
+@property (nonatomic) NSTimeInterval duration;
+@property (strong, nonatomic) NSArray *tests;
 
 
-+ (AHError *) populateWithDictionary: (NSDictionary *)dict;
+
++ (AHTest *) populateWithDictionary: (NSDictionary *)dict;
+
+
++ (NSArray *)getAllByUrl:(NSString *)theUrl error:(NSError **)error;
+
+
++ (void)getAllByUrl: (NSString *)theUrl usingCallback:(void (^)(NSArray *))resultsBlock errorBlock:(void (^)(NSError *))error;
 
 
 
@@ -38,7 +53,7 @@
  the load failed.
  
  */
-+ (NSArray *)getAllByAppID:(NSString *)appID error:(NSError **)error;
++ (NSArray *)getAllByAppID:(NSString *)appID withBuild:(NSInteger)buildID error:(NSError **)error;
 
 
 /*! 
@@ -62,7 +77,7 @@
  the load failed.
  
  */
-+ (void)getAllByAppID:(NSString *)appID usingCallback:(void (^)(NSArray *))resultsBlock errorBlock:(void (^)(NSError *))error;
++ (void)getAllByAppID:(NSString *)appID withBuild:(NSInteger)buildID usingCallback:(void (^)(NSArray *))resultsBlock errorBlock:(void (^)(NSError *))error;
 
 /*! 
  @method      getByUserID:forApp:error
@@ -85,7 +100,7 @@
  about the application that was retrieved
  
  */
-+ (AHError *)getByUrl:(NSString *)url error:(NSError **)error;
++ (AHTest *)getByAppID:(NSString *)appID withBuild:(NSInteger)buildID withTestID: (NSString *)tID error:(NSError **)error;
 
 
 /*! 
@@ -109,6 +124,9 @@
  a block is available for that
  
  */
-+ (void)getByUrl:(NSString *)url usingCallback:(void (^)(AHError *))build errorBlock:(void (^)(NSError *))error;
++ (void)getByAppID:(NSString *)appID withBuild:(NSInteger)buildID withTestID: (NSString *)tID usingCallback:(void (^)(AHTest *))returnTest errorBlock:(void (^)(NSError *))error;
+
+
+
 
 @end
