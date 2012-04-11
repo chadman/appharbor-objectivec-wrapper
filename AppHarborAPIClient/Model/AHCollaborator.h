@@ -153,10 +153,50 @@ typedef enum {
  load succeeds.
  
  */
-- (void)createUsingCallback:(void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error;
+- (void)createUsingCallback:(void (^)(NSString *))location errorBlock:(void (^)(NSError *))error;
 
 
+/*! 
+ @method      delete:
+ 
+ @abstract 
+ Performs a synchronous call to the App Harbor API 
+ to delete the existing application.
+ 
+ @discussion
+ It is highly recommended that when calling this method you 
+ give the user a warning on what is about to happen
+ 
+ @param
+ error     Out parameter (may be NULL) used if an error occurs
+ while processing the request. Will not be modified if the 
+ load succeeds.
+ 
+ */
+- (BOOL) delete: (NSError **)error;
 
+/*! 
+ @method      deleteUsingCallback:errorBlock
+ 
+ @abstract 
+ Performs an asynchronous call to the App Harbor API 
+ to delete the existing application.
+ 
+ @discussion
+ It is highly recommended that when calling this method you 
+ give the user a warning on what is about to happen
+ 
+ @param
+ isSuccessful	Block that gives a boolean on whether or not
+ the operation was successful
+ 
+ @param
+ error     Out parameter (may be NULL) used if an error occurs
+ while processing the request. Will not be modified if the 
+ load succeeds.
+ 
+ */
+- (void)deleteUsingCallback:(void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error;
 
 
 

@@ -159,7 +159,7 @@
 	return YES;
 }
 
-- (void) createUsingCallback:(void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error {
+- (void) createUsingCallback:(void (^)(NSString *))location errorBlock:(void (^)(NSError *))error {
 
 	AHWebRequest *request = [[AHWebRequest alloc] init];
 	NSString * urlString = [NSString stringWithFormat:@"https://appharbor.com/applications/%@/collaborators", self.appName];
@@ -178,9 +178,9 @@
 	[request postWebRequest:[NSURL URLWithString:urlString] 
 			withContentType:WebRequestContentTypeJson 
 				   withData:[json dataUsingEncoding:NSUTF8StringEncoding]  
-			  usingCallback:^(id returnedResults) {
+			  usingCallback:^(id returnLocation) {
 				  
-				  isSuccessful(YES);
+				  location(returnLocation);
 			  }
 				 errorBlock:^(NSError *localError) {
 					 
@@ -191,6 +191,40 @@
 	 ];
 }
 
+- (BOOL) delete:(NSError *__autoreleasing *)error {
+	
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	
+	[request deleteWebRequest:[NSURL URLWithString:url] 
+			  withContentType:WebRequestContentTypeJson 
+					withError:&*error];
+	
+	if (*error) {
+		return NO;
+	}
+	
+	return YES;
+}
+
+- (void) deleteUsingCallback:(void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error {
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	
+	[request deleteWebRequest:[NSURL URLWithString:url] 
+			  withContentType:WebRequestContentTypeJson  
+				usingCallback:^(id returnedResults) {
+					
+					isSuccessful(YES);
+				}
+				   errorBlock:^(NSError *localError) {
+					   
+					   if (error) {
+						   error(localError);
+					   }
+				   }
+	 ];
+}
 
 #pragma mark - Population Methods
 

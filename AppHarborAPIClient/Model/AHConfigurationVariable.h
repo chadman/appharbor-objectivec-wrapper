@@ -139,7 +139,7 @@
  load succeeds.
  
  */
-- (void)createWithAppID: (NSString *)appID usingCallback:(void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error;
+- (void)createWithAppID: (NSString *)appID usingCallback:(void (^)(NSString *))location errorBlock:(void (^)(NSError *))error;
 
 
 /*! 

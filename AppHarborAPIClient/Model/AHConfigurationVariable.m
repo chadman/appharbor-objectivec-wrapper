@@ -138,7 +138,7 @@
 	[json appendFormat:@"\"value\" : \"%@\"", self.value];
 	[json appendString:@"}"];
 	
-	[request postWebRequest:[NSURL URLWithString:urlString] 
+	NSString *location = [request postWebRequest:[NSURL URLWithString:urlString] 
 			withContentType:WebRequestContentTypeJson 
 				   withData:[json dataUsingEncoding:NSUTF8StringEncoding] 
 				  withError:&*error];
@@ -147,10 +147,11 @@
 		return NO;
 	}
 	
+	[self setUrl:location];
 	return YES;
 }
 
-- (void) createWithAppID:(NSString *)appID usingCallback:(void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error {
+- (void) createWithAppID:(NSString *)appID usingCallback:(void (^)(NSString *))location errorBlock:(void (^)(NSError *))error {
 	
 	AHWebRequest *request = [[AHWebRequest alloc] init];
 	NSString *urlString = [NSString stringWithFormat:@"https://appharbor.com/applications/%@/configurationvariables", appID];
@@ -163,9 +164,9 @@
 	[request postWebRequest:[NSURL URLWithString:urlString] 
 			withContentType:WebRequestContentTypeJson 
 				   withData:[json dataUsingEncoding:NSUTF8StringEncoding]  
-			  usingCallback:^(id returnedResults) {
+			  usingCallback:^(id returnLocation) {
 				  
-				  isSuccessful(YES);
+				  location(returnLocation);
 			  }
 				 errorBlock:^(NSError *localError) {
 					 

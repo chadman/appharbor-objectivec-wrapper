@@ -205,10 +205,19 @@
 	
 	self.testID = [dict objectForKey:@"id"];
 	self.name = [dict objectForKey:@"name"];
-	self.status = [[dict objectForKey:@"status"] isEqualToString:@"Failed"] ? AHTestStatusFailed : AHTestStatusSuccess;
 	self.kind = [[dict objectForKey:@"kind"] isEqualToString:@"Group"] ? AHTestKindGroup : AHTestKindTest;
+	self.duration = [dict objectForKey:@"duration"];
 	
-	
+	if ([[dict objectForKey:@"status"] isEqualToString:@"Failed"]) {
+		self.status = AHTestStatusFailed;
+	}
+	else if ([[dict objectForKey:@"status"] isEqualToString:@"Passed"]) {
+		self.status = AHTestStatusPassed;
+	}
+	else if ([[dict objectForKey:@"status"] isEqualToString:@"Skipped"]) {
+		self.status = AHTestStatusSkipped;
+	}
+		  
 	if ([[dict objectForKey:@"tests"] count] > 0) {
 		
 		NSMutableArray *testArray = [[NSMutableArray alloc] initWithObjects:nil];

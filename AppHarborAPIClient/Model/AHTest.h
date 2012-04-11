@@ -1,8 +1,9 @@
 
 
 typedef enum {
-	AHTestStatusSuccess, // Test status of success
-	AHTestStatusFailed // Test status of failed
+	AHTestStatusPassed, // Test status of passed
+	AHTestStatusFailed, // Test status of failed
+	AHTestStatusSkipped // Test status of skipped
 } AHTestStatus;
 
 typedef enum {
@@ -16,9 +17,8 @@ typedef enum {
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) AHTestStatus status;
 @property (nonatomic) AHTestKind kind;
-@property (nonatomic) NSTimeInterval duration;
+@property (strong, nonatomic) NSString *duration;
 @property (strong, nonatomic) NSArray *tests;
-
 
 
 + (AHTest *) populateWithDictionary: (NSDictionary *)dict;
