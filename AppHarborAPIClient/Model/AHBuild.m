@@ -134,6 +134,45 @@
 	 ];
 }
 
+- (BOOL) deploy:(NSError **)error {
+	
+
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	NSString *urlString = [NSString stringWithFormat:@"%@/deploy", self.url];
+	
+	[request postWebRequest:[NSURL URLWithString:urlString] 
+			withContentType:WebRequestContentTypeJson 
+				   withData:nil
+				  withError:&*error];
+	
+	if (*error) {
+		return NO;
+	}
+	
+	return YES;
+}
+
+- (void) deployUsingCallback: (void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error {
+	
+	AHWebRequest *request = [[AHWebRequest alloc] init];
+	NSString *urlString = [NSString stringWithFormat:@"%@/deploy", self.url];
+	
+	[request postWebRequest:[NSURL URLWithString:urlString] 
+			withContentType:WebRequestContentTypeJson 
+				   withData:nil 
+			  usingCallback:^(id returnLocation) {
+				  isSuccessful(YES);
+			  }
+				 errorBlock:^(NSError *localError) {
+					 
+					 if (error) {
+						 error(localError);
+					 }
+				 }
+	 ];
+	
+}
+
 
 #pragma mark - Population Methods
 

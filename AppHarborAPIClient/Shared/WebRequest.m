@@ -104,7 +104,11 @@
         NSInteger statusCode = [localResponse statusCode];
 		NSLog(@"Web Request Response :: %@", responseBody);
 		
-		if (statusCode == 201) {
+		
+		if (statusCode == 200) {
+			return nil;
+		}
+		else if (statusCode == 201) {
 			return [[localResponse allHeaderFields] objectForKey:@"Location"];
 		}
 		else {

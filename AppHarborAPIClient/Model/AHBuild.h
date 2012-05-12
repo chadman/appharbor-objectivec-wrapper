@@ -112,4 +112,52 @@
 + (void)getByUrl:(NSString *)url usingCallback:(void (^)(AHBuild *))build errorBlock:(void (^)(NSError *))error;
 
 
+/*! 
+ @method      getByUserID:forApp:usingCallback:errorBlock:
+ 
+ @abstract 
+ Performs an asynchronous call to the 
+ App Harbor API Collaborator resource. 
+ 
+ @discussion
+ 
+ @param
+ userUrl	the url to the collaborator, we cannot get by id right now
+ 
+ @param
+ resultsBlock	The block that is performed after the
+ request to the app harbor api has happened.
+ 
+ @param
+ error	If the requests errors for any reason, 
+ a block is available for that
+ 
+ */
+- (BOOL) deploy:(NSError **)error;
+
+/*! 
+ @method      getByUserID:forApp:usingCallback:errorBlock:
+ 
+ @abstract 
+ Performs an asynchronous call to the 
+ App Harbor API Collaborator resource. 
+ 
+ @discussion
+ 
+ @param
+ userUrl	the url to the collaborator, we cannot get by id right now
+ 
+ @param
+ resultsBlock	The block that is performed after the
+ request to the app harbor api has happened.
+ 
+ @param
+ error	If the requests errors for any reason, 
+ a block is available for that
+ 
+ */
+- (void) deployUsingCallback: (void (^)(BOOL))isSuccessful errorBlock:(void (^)(NSError *))error;
+
+
+
 @end
